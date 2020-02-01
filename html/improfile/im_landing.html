@@ -13,13 +13,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script>
-  $(document).ready(function(){
-    $("button").click(function(){
-      $("p").toggle();
-    });
-  });
-</script>
+
   </head>
 
   <body>
@@ -48,48 +42,6 @@
       </ul>
     </div>
 
-    
-
-   <!-- <button style="height:50px;width:70px" type="button" class="btn">Update Contact Information</button> -->
-
-    <!--<font size="5" color="green"><b>you are learning web designing</b></font> <p>-->
-
-<div class="container">
-  <div class="row">
-    <div class="col-sm">
-      <h1>Your Information:</h1><p><p>
-
-      ID: <div> </div><p>
-
-      First Name: <div> </div><p>
-
-      Last Name: <div> </div><p>
-
-      Date of Birth: <div> </div><p>
-
-      Country of Origin: <div> </div><p>
-
-      Primary Language: <div> </div><p>
-
-      Other Languages: <div> </div><p>
-
-      US Point of Entry: <div> </div><p>
-
-      Contacts: <p> <div> </div> <p>
-    </div>
-    <div class="col-sm">
-      <h1>Actions:</h1><p>
-
-      <h2>Status</h2><p>
-      <input type="radio" name="aRep" value="Yes" checked> Yellow<br>
-      <input type="radio" name="aRep" value="No"> Red<br><br>
-      <!--<button>Toggle between hide() and show()</button>-->
-      <a class="btn btn-info" href="imupdate/imupdate.html" >Update Your Information</a> <!--Maybe fix later??-->
-      <!--<button type="button" class="btn btn-info">Update Your Information</button>-->
-    </div>
-  </div>
-</div>
-
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -98,6 +50,54 @@
   </body>
 
   <main>
+
+    <!-- <button style="height:50px;width:70px" type="button" class="btn">Update Contact Information</button> -->
+
+     <!--<font size="5" color="green"><b>you are learning web designing</b></font> <p>-->
+
+ <div class="container">
+   <div class="row">
+     <div class="col-sm">
+       <h1>Your Information:</h1><p><p>
+
+       ID: <div> </div><p>
+
+       First Name: <div> </div><p>
+
+       Last Name: <div> </div><p>
+
+       Date of Birth: <div> </div><p>
+
+       Country of Origin: <div> </div><p>
+
+       Primary Language: <div> </div><p>
+
+       Other Languages: <div> </div><p>
+
+       US Point of Entry: <div> </div><p>
+
+       Contacts: <p> <div> </div> <p>
+     </div>
+     <div class="col-sm">
+       <h1>Actions:</h1><p>
+
+       <h2>Status</h2><p>
+       <input type="radio" name="aRep" value="Yes" checked> Yellow<br>
+       <input type="radio" name="aRep" value="No"> Red<br><br>
+       <!--<button>Toggle between hide() and show()</button>-->
+       <a class="btn btn-info" href="imupdate/imupdate.html" >Update Your Information</a> <!--Maybe fix later??-->
+       <!--<button type="button" class="btn btn-info">Update Your Information</button>-->
+     </div>
+   </div>
+ </div>
+
+    <script>
+    $(document).ready(function(){
+      $("button").click(function(){
+        $("p").toggle();
+      });
+    });
+  </script>
 
   </main>
 
