@@ -56,10 +56,13 @@ span.psw {
 
 .pills-peach-gradient .nav-item .nav-link.active {
 background: linear-gradient(40deg, #FFD86F, #FC6262);
+color: #ffffff;
 }
 
 .btn-peach-gradient .btn {
-background: linear-gradient(40deg, #FFD86F, #FC6262);
+background-image: linear-gradient(40deg, #FFD86F, #FC6262);
+color:#ffffff;
+
 }
 
 .row.text-center > div {
