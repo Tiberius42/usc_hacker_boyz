@@ -40,6 +40,52 @@
       </ul>
     </div>
 
+<div class="container">
+  <form action="/Database.txt" method="post">
+    First name:<br>
+    <input type="text" name="firstname" placeholder="John" value=""><br>
+    Last name:<br>
+    <input type="text" name="lastname" placeholder="Doe" value=""><br>
+    Date of Birth:<br>
+    <input type="text" name="DOB" placeholder="5/5/55" value=""><br>
+    A#:<br>
+    <input type="text" name="aNum" placeholder="012345678" value=""><br>
+    Country of Origin:<br>
+    <input type="text" name="country" placeholder="Ruritania" value=""><br>
+    What is your primary language?:<br>
+    <input type="text" name="pLang" placeholder="English" value=""><br>
+    Do you speak any other languages?<br>
+    <input type="radio" name="sLangBool" value="Yes" checked> Yes<br>
+    <input type="radio" name="sLangBool" value="No"> No<br><br>
+    If so, which language(s)?<br>
+    <input type="text" name="sLang" placeholder="Chinese, Spanish, etc." value=""><br>
+    In what language would you like to be interviewed?<br>
+    <input type="text" name="iLang" placeholder="English" value=""><br>
+    In which languages can you read?<br>
+    <input type="text" name="rLang" placeholder="English, Chinese, etc." value=""><br>
+    Have you ever spoken with or had an attorney represent you before the immigration court?<br>
+    <input type="radio" name="aRep" value="Yes" checked> Yes<br>
+    <input type="radio" name="aRep" value="No"> No<br><br>
+    When did you last enter the US?<br>
+    <input type="date" id="dat" name="dat">
+    Manner of last entry to the US:<br>
+    <input type="radio" name="lEntry" value="AA" checked> AA<br>
+    <input type="radio" name="lEntry" value="EWI"> EWI<br>
+    <input type="radio" name="lEntry" value="VISA"> VISA<br>
+    <input type="radio" name="lEntry" value="Greencard"> Greencard<br>
+    <input type="radio" name="lEntry" value="Other"> Other<br><br>
+    If "Other", explain:
+    <input type="text" name="lEntry" placeholder="Details..." value=""><br>
+    Where exactly did you enter the US?<br>
+    <input type="radio" name="loc" value="Bridge" checked>Bridge<br>
+    <input type="radio" name="loc" value="River"> River<br>
+    <input type="radio" name="loc" value="Desert"> Desert<br>
+    <input type="radio" name="loc" value="Other"> Other<br><br>
+    If "Other", explain:
+    <input type="text"  name="loc" placeholder="Details..." value=""><br>
+    <input type="submit" class="btn" value="Submit">
+  </form>
+</div>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
