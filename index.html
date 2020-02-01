@@ -22,18 +22,6 @@
         <li class="nav-item">
           <a class="nav-item nav-link active" a href="index.html">Home</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Register
-          <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li class = "nav-item">
-              <a class="nav-item nav-link"href="html/imregister/imregister.html">Immigrants</a>
-            </li>
-            <li class = "nav-item">
-              <a class="nav-item nav-link" href="html/lawregister/lawregister.html">Lawyers</a>
-            </li>
-          </ul>
-        </li>
         <li class = "nav-item">
           <a class="nav-item nav-link" href="html/about/about.html">About</a>
         </li>
@@ -121,7 +109,7 @@
       },
       // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
       signInFlow: 'popup',
-      signInSuccessUrl: 'html/lawregister/lawregister.html',
+      signInSuccessUrl: 'html/landing/landing.html',
       signInOptions: [
       // Leave the lines as is for the providers you want to offer your users.
       firebase.auth.GoogleAuthProvider.PROVIDER_ID,
