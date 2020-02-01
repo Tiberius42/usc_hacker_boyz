@@ -39,11 +39,109 @@
         </li>
       </ul>
     </div>
+	
+	<div class="container">
+		<div class="row mt-5"> 
+			<div class = "col-6 text-right">
+					<h1>Welcome to our solution!</h1>
+			</div>
+			<div class = "col-6" id="firebaseui-auth-container"></div>
+		</div>
+	</div>
+	
+	
 
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
       <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+	<!-- Firebase code -->
+	
+	  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-firestore.js"></script>
+  
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+	<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+	
+	<script>
+	  var firebaseConfig = {
+		apiKey: "AIzaSyAvEkZc5g6B0yKAdwyavrgOftAHH2ZbToc",
+		authDomain: "hacksc2020-3a9d3.firebaseapp.com",
+		databaseURL: "https://hacksc2020-3a9d3.firebaseio.com",
+		projectId: "hacksc2020-3a9d3",
+		storageBucket: "hacksc2020-3a9d3.appspot.com",
+		messagingSenderId: "448755823877",
+		appId: "1:448755823877:web:c46d94bc3f970f226bf36c",
+		measurementId: "G-3G42FB3502"
+	  };
+	  // Initialize Firebase
+	  firebase.initializeApp(firebaseConfig);
+	  
+	  
+	  
+		var ui = new firebaseui.auth.AuthUI(firebase.auth());
+		ui.start('#firebaseui-auth-container', {
+		  signInOptions: [
+			// List of OAuth providers supported.
+			//We are only using google for now
+			firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+			/*firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+			firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+			firebase.auth.GithubAuthProvider.PROVIDER_ID*/
+		  ],
+		  // Other config options...
+		});
+	  
+	  // Create a reference to the Lawers collection
+
+	  var uiConfig = {
+	  callbacks: {
+		signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+
+	  
+		  // User successfully signed in.
+		  // Return type determines whether we continue the redirect automatically
+		  // or whether we leave that to developer to handle.
+		  return true;
+		},
+		uiShown: function() {
+		  // The widget is rendered.
+		  // Hide the loader.
+		  document.getElementById('loader').style.display = 'none';
+		}
+	  },
+	  // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
+	  signInFlow: 'popup',
+	  signInSuccessUrl: 'html/lawregister/lawregister.html',
+	  signInOptions: [
+		// Leave the lines as is for the providers you want to offer your users.
+		firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+		/*firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+		firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+		firebase.auth.GithubAuthProvider.PROVIDER_ID,
+		firebase.auth.EmailAuthProvider.PROVIDER_ID,
+		firebase.auth.PhoneAuthProvider.PROVIDER_ID*/
+	  ],
+	  // Terms of service url.
+	  tosUrl: '<your-tos-url>',
+	  // Privacy policy url.
+	  privacyPolicyUrl: '<your-privacy-policy-url>'
+	};
+	  
+	  // The start method will wait until the DOM is loaded.
+	ui.start('#firebaseui-auth-container', uiConfig);
+		
+		
+		
+		
+	</script>
+
+
 
   </body>
 
