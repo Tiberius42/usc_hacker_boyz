@@ -12,6 +12,8 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
   </head>
 
   <body>
@@ -22,41 +24,114 @@
         <li class="nav-item">
           <a class="nav-item nav-link" a href="../../index.html">Home</a>
         </li>
-        <li class = "nav-item">
-          <a class="nav-item nav-link active" href="improfile.html">Profile</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#">Register
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li class = "nav-item">
+              <a class="nav-item nav-link"href="../imregister/imregister.html">Immigrants</a>
+            </li>
+            <li class = "nav-item">
+              <a class="nav-item nav-link" href="lawregister.html">Lawyers</a>
+            </li>
+          </ul>
+        </li>
         <li class = "nav-item">
           <a class="nav-item nav-link" href="../about/about.html">About</a>
         </li>
       </ul>
     </div>
 
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
   </body>
 
   <main>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-8"></div>
-        <div class="col-4">
-          <a href="imupdate/imupdate.html" class="btn btn-peach-gradient">Update Profile</a>
-        </div>
-        <div class="w-100"></div>
-        <div class="col-8"></div>
-        <div class="col-4">
+    <!-- <button style="height:50px;width:70px" type="button" class="btn">Update Contact Information</button> -->
 
-        </div>
-        <div class="w-100"></div>
-        <div class="col-8"></div>
-        <div class="col-4">
+     <!--<font size="5" color="green"><b>you are learning web designing</b></font> <p>-->
 
-        </div>
-      </div>
+ <div class="container">
+   <div class="row">
+     <div class="col-sm">
+       <h1>Your Information:</h1><p><p>
+
+       ID: <div> </div><p>
+
+       First Name: <div> </div><p>
+
+       Last Name: <div> </div><p>
+
+       Date of Birth: <div> </div><p>
+
+       Country of Origin: <div> </div><p>
+
+       Primary Language: <div> </div><p>
+
+      Contacts: <p> <div> </div> <p>
     </div>
+    <div class="col-sm">
+      <h1>Actions:</h1><p>
+
+      <a class="btn btn-danger" onclick = "registerCase()">Click here if you have been detained!</a> <p>
+      <!--<button>Toggle between hide() and show()</button>-->
+      <a class="btn btn-info" href="imupdate/imupdate.html" >Update Your Information</a> <!--Maybe fix later??-->
+      <!--<button type="button" class="btn btn-info">Update Your Information</button>-->
+    </div>
+  </div>
+</div>
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <!-- <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-firestore.js"></script>
+  <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+      apiKey: "AIzaSyAvEkZc5g6B0yKAdwyavrgOftAHH2ZbToc",
+      authDomain: "hacksc2020-3a9d3.firebaseapp.com",
+      //databaseURL: "https://hacksc2020-3a9d3.firebaseio.com",
+      projectId: "hacksc2020-3a9d3",
+      /*storageBucket: "hacksc2020-3a9d3.appspot.com",
+      messagingSenderId: "448755823877",
+      appId: "1:448755823877:web:c46d94bc3f970f226bf36c",
+      measurementId: "G-3G42FB3502"*/
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      <!-- firebase.analytics();
+      var db = firebase.firestore();
+
+    
+    function registerCase(){
+      var user = firebase.auth().currentUser;
+      var immigID = "garbage_garbage_garbage";
+      var lawyerID = "Unassigned";
+          db.collection("Case").add({
+          ImmigrantID: immigID,
+          LawyerID: lawyerID,
+        })
+        .then(function(docRef) {
+          console.log("Document written with ID: ", docRef.id);
+        })
+        .catch(function(error) {
+          console.error("Error adding document: ", error);
+    });
+
+
+}
+  </script>
+
+  
 
   </main>
 
