@@ -43,19 +43,19 @@
     <div class="container">
       <form action="../lawprofile/lawprofile.html">
         First name:<br>
-        <input type="text" name="firstname" id="fn" placeholder="John" value=""><br>
+        <input type="text" name="firstname" id="fn" placeholder="John" value="" required><br>
         Last name:<br>
-        <input type="text" name="lastname" id="ln" placeholder="Doe" value=""><br>
+        <input type="text" name="lastname" id="ln" placeholder="Doe" value="" required><br>
         Email:<br>
-        <input type="text" name="email" id="e" placeholder="name@email.com" value=""><br>
+        <input type="email" name="email" id="e" placeholder=" name@email.com" value="" required><br><br>
         Phone Number:<br>
-        <input type="text" name="cell" id="c" placeholder="(555) 123-4567" value=""><br>
+        <input class="phone-format" type="text" name="cell" id="c" placeholder="(555) 123-4567" value="" required><br>
         Please submit authentification of your credentials:<br>
-        <input type="file" id="cred" name="cred" accept="image/png, image/jpeg, application/pdf"><br><br>
+        <input type="file" id="cred" name="cred" accept="image/png, image/jpeg, application/pdf" required><br><br>
         <input type="submit" value="Submit" onclick = "register()">
       </form>
     </div>
-	
+
 	<button type="button" onclick="check()">pls work</button>
 
 
@@ -107,9 +107,9 @@
 					console.error("Error adding document: ", error);
 				});
 
-			
+
 		}
-		
+
 		function check(){
 			var lawRef = db.collection("Lawyer");
 			var user = firebase.auth().currentUser;
@@ -130,6 +130,32 @@
 					});
 		}
 	</script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.1.62/jquery.inputmask.bundle.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      /***phone number format***/
+      $(".phone-format").keypress(function (e) {
+        if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+          return false;
+        }
+        var curchr = this.value.length;
+        var curval = $(this).val();
+        if (curchr == 3 && curval.indexOf("(") <= -1) {
+          $(this).val("(" + curval + ")" + "-");
+        } else if (curchr == 4 && curval.indexOf("(") > -1) {
+          $(this).val(curval + ")-");
+        } else if (curchr == 5 && curval.indexOf(")") > -1) {
+          $(this).val(curval + "-");
+        } else if (curchr == 9) {
+          $(this).val(curval + "-");
+          $(this).attr('maxlength', '14');
+        }
+      });
+    });
+  </script>
 
 
   </body>

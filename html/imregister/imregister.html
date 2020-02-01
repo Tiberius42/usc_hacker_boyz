@@ -41,55 +41,149 @@
     </div>
 
 <div class="container">
-  <form action="/Database.txt" method="post">
+  <form action="../improfile/improfile.html">
     First name:<br>
-    <input type="text" name="firstname" placeholder="John" value=""><br>
+    <input type="text" name="firstname" id="fn" placeholder="John" value="" required><br>
     Last name:<br>
-    <input type="text" name="lastname" placeholder="Doe" value=""><br>
+    <input type="text" name="lastname" id="ln" placeholder="Doe" value="" required><br>
     Date of Birth:<br>
-    <input type="text" name="DOB" placeholder="5/5/55" value=""><br>
+    <input type="text" name="DOB" id="dob" placeholder="5/5/55" value="" required><br>
     A#:<br>
-    <input type="text" name="aNum" placeholder="012345678" value=""><br>
+    <input type="text" name="aNum" id="an" placeholder="012345678" value="" required><br>
     Country of Origin:<br>
-    <input type="text" name="country" placeholder="Ruritania" value=""><br>
+    <input type="text" name="country" id="coo" placeholder="Ruritania" value="" required><br>
     What is your primary language?:<br>
-    <input type="text" name="pLang" placeholder="English" value=""><br>
+    <input type="text" name="pLang" id="pl" placeholder="English" value="" required><br>
     Do you speak any other languages?<br>
-    <input type="radio" name="sLangBool" value="Yes" checked> Yes<br>
-    <input type="radio" name="sLangBool" value="No"> No<br><br>
+    <input type="radio" name="sLangBool" id="sltf" value="Yes" checked required> Yes<br>
+    <input type="radio" name="sLangBool" id="sltf" value="No" required> No<br><br>
     If so, which language(s)?<br>
-    <input type="text" name="sLang" placeholder="Chinese, Spanish, etc." value=""><br>
+    <input type="text" name="sLang" id="sl" placeholder="Chinese, Spanish, etc." value="" required><br>
     In what language would you like to be interviewed?<br>
-    <input type="text" name="iLang" placeholder="English" value=""><br>
+    <input type="text" name="iLang" id="il" placeholder="English" value="" required><br>
     In which languages can you read?<br>
-    <input type="text" name="rLang" placeholder="English, Chinese, etc." value=""><br>
+    <input type="text" name="rLang" id="rl" placeholder="English, Chinese, etc." value="" required><br>
     Have you ever spoken with or had an attorney represent you before the immigration court?<br>
-    <input type="radio" name="aRep" value="Yes" checked> Yes<br>
-    <input type="radio" name="aRep" value="No"> No<br><br>
+    <input type="radio" name="aRep" id="ar" value="Yes" checked required> Yes<br>
+    <input type="radio" name="aRep" id="ar" value="No" required> No<br><br>
     When did you last enter the US?<br>
-    <input type="date" id="dat" name="dat">
+    <input type="date" id="et" name="entryTime" required>
     Manner of last entry to the US:<br>
-    <input type="radio" name="lEntry" value="AA" checked> AA<br>
-    <input type="radio" name="lEntry" value="EWI"> EWI<br>
-    <input type="radio" name="lEntry" value="VISA"> VISA<br>
-    <input type="radio" name="lEntry" value="Greencard"> Greencard<br>
-    <input type="radio" name="lEntry" value="Other"> Other<br><br>
+    <input type="radio" name="lEntryWay" id="lew" value="AA" checked required> AA<br>
+    <input type="radio" name="lEntryWay" id="lew" value="EWI" required> EWI<br>
+    <input type="radio" name="lEntryWay" id="lew" value="VISA" required> VISA<br>
+    <input type="radio" name="lEntryWay" id="lew" value="Greencard" required> Greencard<br>
+    <input type="radio" name="lEntryWay" id="lew" value="Other" required> Other<br><br>
     If "Other", explain:
-    <input type="text" name="lEntry" placeholder="Details..." value=""><br>
+    <input type="text" name="lEntryPlace" id="lewd" placeholder="Details..." value="" required><br>
     Where exactly did you enter the US?<br>
-    <input type="radio" name="loc" value="Bridge" checked>Bridge<br>
-    <input type="radio" name="loc" value="River"> River<br>
-    <input type="radio" name="loc" value="Desert"> Desert<br>
-    <input type="radio" name="loc" value="Other"> Other<br><br>
+    <input type="radio" name="loc" id="loc" value="Bridge" checked required>Bridge<br>
+    <input type="radio" name="loc" id="loc" value="River" required> River<br>
+    <input type="radio" name="loc" id="loc" value="Desert" required> Desert<br>
+    <input type="radio" name="loc" id="loc" value="Other" required> Other<br><br>
     If "Other", explain:
-    <input type="text"  name="loc" placeholder="Details..." value=""><br>
-    <input type="submit" class="btn" value="Submit">
+    <input type="text"  name="locd" placeholder="Details..." value="" required><br>
+    <input type="submit" class="btn" value="Submit" onclick = "register()">
   </form>
 </div>
+
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-analytics.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
+  	<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-firestore.js"></script>
+  	<script>
+  		  // Your web app's Firebase configuration
+  		  var firebaseConfig = {
+  			apiKey: "AIzaSyAvEkZc5g6B0yKAdwyavrgOftAHH2ZbToc",
+  			authDomain: "hacksc2020-3a9d3.firebaseapp.com",
+  			//databaseURL: "https://hacksc2020-3a9d3.firebaseio.com",
+  			projectId: "hacksc2020-3a9d3",
+  			/*storageBucket: "hacksc2020-3a9d3.appspot.com",
+  			messagingSenderId: "448755823877",
+  			appId: "1:448755823877:web:c46d94bc3f970f226bf36c",
+  			measurementId: "G-3G42FB3502"*/
+  		  };
+  		  // Initialize Firebase
+  		  firebase.initializeApp(firebaseConfig);
+  		  <!-- firebase.analytics();
+  		  var db = firebase.firestore();
+
+  		function register(){
+  			var user = firebase.auth().currentUser;
+  			var fn = document.getElementById('fn').value;
+  			var ln = document.getElementById('ln').value;
+  			var dob = document.getElementById('dob').value;
+        var an = document.getElementById('an').value;
+        var coo = document.getElementById('coo').value;
+        var pl = document.getElementById('pl').value;
+        var sltf = document.getElementById('sltf').value;
+        var sl = document.getElementById('sl').value;
+        var il = document.getElementById('il').value;
+        var rl = document.getElementById('rl').value;
+        var ar = document.getElementById('ar').value;
+        var et = document.getElementById('et').value;
+        var lew = document.getElementById('lew').value;
+        var lewd = document.getElementById('lewd').value;
+        var loc = document.getElementById('loc').value;
+        var locd = document.getElementById('locd').value;
+        var
+  				  db.collection("Immigrant").add({
+  					firstName: fn,
+  					lastName: ln,
+            dateOfBirth: dob,
+            aNumber: an,
+            countryOfOrigin: coo,
+            primaryLang: pl,
+            secLangBool: sltf,
+            secLang: sl,
+            interviewLang: il,
+            readLang: rl,
+            attorneyRep: ar,
+            EntryTime: et,
+            lastEntryWay: lew,
+            entryWayDetails: lewd,
+            lastEntryPlace: loc,
+            entryPlaceDetails: locd,
+  					id : user.uid
+  				})
+  				.then(function(docRef) {
+  					console.log("Document written with ID: ", docRef.id);
+  				})
+  				.catch(function(error) {
+  					console.error("Error adding document: ", error);
+  				});
+
+
+  		}
+
+  		function check(){
+  			var lawRef = db.collection("Immigrant");
+  			var user = firebase.auth().currentUser;
+  			var uid = user.uid;
+  				db.collection("cities").where("capital", "==", true)
+  					.get()
+  					.then(function(querySnapshot) {
+  						querySnapshot.forEach(function(doc) {
+  							if(!querySnapshot.exists()){
+  								alert("dammmm");
+  							}
+  							// doc.data() is never undefined for query doc snapshots
+  							console.log(doc.id, " => ", doc.data());
+  						});
+  					})
+  					.catch(function(error) {
+  						console.log("Error getting documents: ", error);
+  					});
+  		}
+  	</script>
 
   </body>
 
