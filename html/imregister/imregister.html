@@ -42,6 +42,8 @@
 
 <div class="container">
   <form action="../improfile/improfile.html">
+    Give a unique Username ID<br>
+    <input type="text" name="UserID" id="ID" placeholder ="Something that you will Remember" required><br>
     First name:<br>
     <input type="text" name="firstname" id="fn" placeholder="John" value="" required><br>
     Last name:<br>
@@ -84,6 +86,30 @@
     If "Other", explain:
     <input type="text"  name="locd" placeholder="Details..." value="" required><br>
     <input type="submit" class="btn" value="Submit" onclick = "register()">
+    <br>
+  	If bridge/port of entry (POE): Before crossing the bridge/POE, were you made to wait or turned away?<br>
+  	<input type="radio" name="Waited_at_Border" value="yes" checked> Yes<br>
+  	<input type="radio" name="Waited_at_Border" value="no"> No<br><br>
+  	If so, for how long?
+  	<input type="text" id="Wait_time" name="Wait_time"><br><br>
+  	Do you have family in the United States, and if so, who and what type of legal status do they have?
+  		If children, are they biological? If spouse, are you legally married?<br><br>
+  	<input type="text" id="Family" name="Family"><br><br>
+  	Do any of your family members in the US have any health or mental health challenges?<br>
+  	<input type="radio" name="Family_sick" value="" checked> Yes<br>
+  	<input type="radio" name="Family_sick" value="no"> No<br>
+
+  	<br>In total, how many people do you have here in the United States, including family and friends, that are willing to support you in your case?<br>
+  	<input type="number" id="People_support" name="People_support">
+
+  	<li>
+  	<label for="Point_of_contact">Who is the best point of contact for your case?</label>
+  	<input type="text" id="Point_of_contact" name="Point_of_contact">
+  	</li>
+  	<li>
+  	<label for="Point_of_contact2">How do we contact this person?</label>
+  	<input type="text" id="Point_of_contact2" name="Point_of_contact2">
+  	</li>
   </form>
 </div>
 
