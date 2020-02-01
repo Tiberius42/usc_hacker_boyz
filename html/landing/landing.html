@@ -4,7 +4,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="../../css/index.css">
     <meta charset="utf-8">
-    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="Shwe++">
     <link rel="icon" href="../../img/favicon.png" type="image/x-icon">
@@ -24,18 +23,6 @@
         <li class="nav-item">
           <a class="nav-item nav-link" a href="../../index.html">Home</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#">Register
-          <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li class = "nav-item">
-              <a class="nav-item nav-link"href="../imregister/imregister.html">Immigrants</a>
-            </li>
-            <li class = "nav-item">
-              <a class="nav-item nav-link" href="lawregister.html">Lawyers</a>
-            </li>
-          </ul>
-        </li>
         <li class = "nav-item">
           <a class="nav-item nav-link" href="../about/about.html">About</a>
         </li>
@@ -54,45 +41,19 @@
     <!-- <button style="height:50px;width:70px" type="button" class="btn">Update Contact Information</button> -->
 
      <!--<font size="5" color="green"><b>you are learning web designing</b></font> <p>-->
-
- <div class="container">
-   <div class="row">
-     <div class="col-sm">
-       <h1>Your Information:</h1><p><p>
-
-       ID: <div> </div><p>
-
-       First Name: <div> </div><p>
-
-       Last Name: <div> </div><p>
-
-       Date of Birth: <div> </div><p>
-
-       Country of Origin: <div> </div><p>
-
-       Primary Language: <div> </div><p>
-
-       Other Languages: <div> </div><p>
-
-       US Point of Entry: <div> </div><p>
-
-       Contacts: <p> <div> </div> <p>
+     <div class="container">
+       <div class="row text-center">
+         <div class="col-6">
+           <a href="../lawregister/lawregister.html" class="btn btn-peach-gradient">Lawyer Registration</a>
+         </div>
+         <div class="col-6">
+           <a href="../imregister/imregister.html" class="btn btn-peach-gradient">Immigrant Registration</a>
+         </div>
+       </div>
      </div>
-     <div class="col-sm">
-       <h1>Actions:</h1><p>
 
-       <h2>Status</h2><p>
-       <input type="radio" name="aRep" value="Yes" checked> Yellow<br>
-       <input type="radio" name="aRep" value="No"> Red<br><br>
-       <!--<button>Toggle between hide() and show()</button>-->
-       <a class="btn btn-info" href="imupdate/imupdate.html" >Update Your Information</a> <!--Maybe fix later??-->
-       <!--<button type="button" class="btn btn-info">Update Your Information</button>-->
-     </div>
-   </div>
- </div>
-
-    <script>
-    $(document).ready(function(){
+     <script>
+     $(document).ready(function(){
       $("button").click(function(){
         $("p").toggle();
       });
