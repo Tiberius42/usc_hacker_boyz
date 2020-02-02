@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../css/index.css">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="author" content="Shwe++">
-    <link rel="icon" href="../../img/favicon.png" type="image/x-icon">
-    <title>HackSC - Equity</title>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../css/index.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Shwe++">
+  <link rel="icon" href="../../img/favicon.png" type="image/x-icon">
+  <title>HackSC - Equity</title>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  </head>
+</head>
 
-  <body onload="check()">
+<body onload="check()">
 
-    <div class="container">
-      <h2> HackSC - Equity</h2>
-      <ul class="nav nav-pills nav-justified nav-fill pills-peach-gradient">
-        <li class="nav-item">
-          <a class="nav-item nav-link" a href="../../index.html">Home</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#">Register
+  <div class="container">
+    <h2> HackSC - Equity</h2>
+    <ul class="nav nav-pills nav-justified nav-fill pills-peach-gradient">
+      <li class="nav-item">
+        <a class="nav-item nav-link" a href="../../index.html">Home</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#">Register
           <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li class = "nav-item">
@@ -52,41 +52,45 @@
     <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-firestore.js"></script>
     <script>
-        // Your web app's Firebase configuration
-        var firebaseConfig = {
-        apiKey: "AIzaSyAvEkZc5g6B0yKAdwyavrgOftAHH2ZbToc",
-        authDomain: "hacksc2020-3a9d3.firebaseapp.com",
-        //databaseURL: "https://hacksc2020-3a9d3.firebaseio.com",
-        projectId: "hacksc2020-3a9d3",
-        /*storageBucket: "hacksc2020-3a9d3.appspot.com",
-        messagingSenderId: "448755823877",
-        appId: "1:448755823877:web:c46d94bc3f970f226bf36c",
-        measurementId: "G-3G42FB3502"*/
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        <!-- firebase.analytics();
-        var db = firebase.firestore();
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyAvEkZc5g6B0yKAdwyavrgOftAHH2ZbToc",
+      authDomain: "hacksc2020-3a9d3.firebaseapp.com",
+      //databaseURL: "https://hacksc2020-3a9d3.firebaseio.com",
+      projectId: "hacksc2020-3a9d3",
+      /*storageBucket: "hacksc2020-3a9d3.appspot.com",
+      messagingSenderId: "448755823877",
+      appId: "1:448755823877:web:c46d94bc3f970f226bf36c",
+      measurementId: "G-3G42FB3502"*/
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    <!-- firebase.analytics();
+    var db = firebase.firestore();
 
-      function register(){
-        var user = firebase.auth().currentUser;
-        var fn = document.getElementById('fn').value;
-        var ln = document.getElementById('ln').value;
-        var dob = document.getElementById('dob').value;
-        var an = document.getElementById('an').value;
-        var coo = document.getElementById('coo').value;
-        var pl = document.getElementById('pl').value;
-        var sltf = document.getElementById('sltf').value;
-        var sl = document.getElementById('sl').value;
-        var il = document.getElementById('il').value;
-        var rl = document.getElementById('rl').value;
-        var ar = document.getElementById('ar').value;
-        var et = document.getElementById('et').value;
-        var lew = document.getElementById('lew').value;
-        var lewd = document.getElementById('lewd').value;
-        var loc = document.getElementById('loc').value;
-        var locd = document.getElementById('locd').value;
-            db.collection("Immigrant").add({
+    function register(){
+      var user = firebase.auth().currentUser;
+
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+
+          var fn = document.getElementById('fn').value;
+          var ln = document.getElementById('ln').value;
+          var dob = document.getElementById('dob').value;
+          var an = document.getElementById('an').value;
+          var coo = document.getElementById('coo').value;
+          var pl = document.getElementById('pl').value;
+          var sltf = document.getElementById('sltf').value;
+          var sl = document.getElementById('sl').value;
+          var il = document.getElementById('il').value;
+          var rl = document.getElementById('rl').value;
+          var ar = document.getElementById('ar').value;
+          var et = document.getElementById('et').value;
+          var lew = document.getElementById('lew').value;
+          var lewd = document.getElementById('lewd').value;
+          var loc = document.getElementById('loc').value;
+          var locd = document.getElementById('locd').value;
+          db.collection("Immigrant").add({
             firstName: fn,
             lastName: ln,
             dateOfBirth: dob,
@@ -112,28 +116,32 @@
             console.error("Error adding document: ", error);
           });
 
+        } else {
+          // No user is signed in.
+          alert("no user");
+        }
+      });
+    }
 
-      }
-
-      function check(){
-        var lawRef = db.collection("Immigrant");
-        var user = firebase.auth().currentUser;
-        var uid = user.uid;
-          db.collection("cities").where("capital", "==", true)
-            .get()
-            .then(function(querySnapshot) {
-              querySnapshot.forEach(function(doc) {
-                if(!querySnapshot.exists()){
-                  alert("dammmm");
-                }
-                // doc.data() is never undefined for query doc snapshots
-                console.log(doc.id, " => ", doc.data());
-              });
-            })
-            .catch(function(error) {
-              console.log("Error getting documents: ", error);
-            });
-      }
+    function check(){
+    /*  var lawRef = db.collection("Immigrant");
+      var user = firebase.auth().currentUser;
+      var uid = user.uid;
+      db.collection("cities").where("capital", "==", true)
+      .get()
+      .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+          if(!querySnapshot.exists()){
+            alert("dammmm");
+          }
+          // doc.data() is never undefined for query doc snapshots
+          console.log(doc.id, " => ", doc.data());
+        });
+      })
+      .catch(function(error) {
+        console.log("Error getting documents: ", error);
+      });
+    }*/
     </script>
 
   </body>
@@ -186,30 +194,30 @@
         If "Other", explain:
         <input type="text"  name="locd" placeholder="Details..." value="" required><br>
         If bridge/port of entry (POE): Before crossing the bridge/POE, were you made to wait or turned away?<br>
-      	<input type="radio" name="Waited_at_Border" value="yes" checked> Yes<br>
-      	<input type="radio" name="Waited_at_Border" value="no"> No<br><br>
-      	If so, for how long?
-      	<input type="text" id="Wait_time" name="Wait_time"><br><br>
-      	Do you have family in the United States, and if so, who and what type of legal status do they have?
-      		If children, are they biological? If spouse, are you legally married?<br><br>
-      	<input type="text" id="Family" name="Family"><br><br>
-      	Do any of your family members in the US have any health or mental health challenges?<br>
-      	<input type="radio" name="Family_sick" value="" checked> Yes<br>
-      	<input type="radio" name="Family_sick" value="no"> No<br>
-      	<br>In total, how many people do you have here in the United States, including family and friends, that are willing to support you in your case?<br>
-      	<input type="number" id="People_support" name="People_support">
-      	<li>
-      	<label for="Point_of_contact">Who is the best point of contact for your case?</label>
-      	<input type="text" id="Point_of_contact" name="Point_of_contact">
-      	</li>
-      	<li>
-      	<label for="Point_of_contact2">How do we contact this person?</label>
-      	<input type="text" id="Point_of_contact2" name="Point_of_contact2">
-      	</li>
+        <input type="radio" name="Waited_at_Border" value="yes" checked> Yes<br>
+        <input type="radio" name="Waited_at_Border" value="no"> No<br><br>
+        If so, for how long?
+        <input type="text" id="Wait_time" name="Wait_time"><br><br>
+        Do you have family in the United States, and if so, who and what type of legal status do they have?
+        If children, are they biological? If spouse, are you legally married?<br><br>
+        <input type="text" id="Family" name="Family"><br><br>
+        Do any of your family members in the US have any health or mental health challenges?<br>
+        <input type="radio" name="Family_sick" value="" checked> Yes<br>
+        <input type="radio" name="Family_sick" value="no"> No<br>
+        <br>In total, how many people do you have here in the United States, including family and friends, that are willing to support you in your case?<br>
+        <input type="number" id="People_support" name="People_support">
+        <li>
+          <label for="Point_of_contact">Who is the best point of contact for your case?</label>
+          <input type="text" id="Point_of_contact" name="Point_of_contact">
+        </li>
+        <li>
+          <label for="Point_of_contact2">How do we contact this person?</label>
+          <input type="text" id="Point_of_contact2" name="Point_of_contact2">
+        </li>
         <input type="submit" value="Submit" onclick = "register()">
       </form>
     </div>
 
   </main>
 
-</html>
+  </html>
