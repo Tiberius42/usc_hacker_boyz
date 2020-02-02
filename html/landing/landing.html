@@ -55,7 +55,6 @@
     </div>
   </div>
 
-
   <a id="jump" type="button" style="visibility:hidden" href="../lawprofile/lawprofile.html">Jump</a>
   <a id="jump2" type="button" style="visibility:hidden" href="../improfile/im_landing.html">Jump2</a>
 
@@ -64,43 +63,9 @@
   $(document).ready(function(){
     $("button").click(function(){
       $("p").toggle();
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
-  </body>
-
-  <main>
-
-    <!-- <button style="height:50px;width:70px" type="button" class="btn">Update Contact Information</button> -->
-
-     <!--<font size="5" color="green"><b>you are learning web designing</b></font> <p>-->
-     <div class="container">
-       <div class="row text-center">
-         <div class="col-6">
-           <a href="../lawregister/lawregister.html" class="btn btn-peach-gradient btn-lg">Lawyer Registration</a>
-         </div>
-         <div class="col-6">
-           <a href="../imregister/imregister.html" class="btn btn-peach-gradient btn-lg">Immigrant Registration</a>
-         </div>
-       </div>
-     </div>
-
-	 	<a id="jump" type="button" style="visibility:hidden" href="../lawprofile/lawprofile.html">Jump</a>
-	 	<a id="jump2" type="button" style="visibility:hidden" href="../improfile/improfile.html">Jump2</a>
-
-<img src = "https://image.shutterstock.com/image-photo/businessmen-making-handshake-city-business-260nw-557307181.jpg" align = "middle">
-     <script>
-     $(document).ready(function(){
-      $("button").click(function(){
-        $("p").toggle();
-      });
-
     });
   });
   </script>
-
 
   <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
@@ -185,89 +150,5 @@
 
   </script>
 </main>
-  	  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-	<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
-
-	<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-	<!-- <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-analytics.js"></script>
-
-	<!-- Add Firebase products that you want to use -->
-	<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-firestore.js"></script>
-	<script>
-		  // Your web app's Firebase configuration
-		  var firebaseConfig = {
-			apiKey: "AIzaSyAvEkZc5g6B0yKAdwyavrgOftAHH2ZbToc",
-			authDomain: "hacksc2020-3a9d3.firebaseapp.com",
-			//databaseURL: "https://hacksc2020-3a9d3.firebaseio.com",
-			projectId: "hacksc2020-3a9d3",
-			/*storageBucket: "hacksc2020-3a9d3.appspot.com",
-			messagingSenderId: "448755823877",
-			appId: "1:448755823877:web:c46d94bc3f970f226bf36c",
-			measurementId: "G-3G42FB3502"*/
-		  };
-		  // Initialize Firebase
-		  firebase.initializeApp(firebaseConfig);
-		  <!-- firebase.analytics();
-		  var db = firebase.firestore();
-			//window.onload = check;
-
-			firebase.auth().onAuthStateChanged(function(user) {
-			  if (user) {
-				// User is signed in.
-				alert("signed in");
-				var user = firebase.auth().currentUser;
-				uid = user.uid;
-				alert(uid);
-				db.collection("Lawyer").where("id", "==", uid)
-				.get()
-				.then(function(querySnapshot) {
-
-				if(querySnapshot.empty){
-					//USER NEEDS TO REGISTER
-					alert("user needs to register");
-						db.collection("Immigrant").where("id", "==", uid)
-						.get()
-						.then(function(querySnapshot2) {
-						
-						if(querySnapshot2.empty){
-
-							//USER NEEDS TO REGISTER
-							alert("user needs to register");
-						}
-						else{
-							querySnapshot2.forEach(function(doc) {
-								// doc.data() is never undefined for query doc snapshots
-								//console.log(doc.id, " => ", doc.data());
-								//JUMP TO LANDING
-								document.getElementById("jump2").click()
-							});
-						}
-
-						})
-				}
-				else{
-					querySnapshot.forEach(function(doc) {
-						// doc.data() is never undefined for query doc snapshots
-						//console.log(doc.id, " => ", doc.data());
-						//JUMP TO LANDING
-						document.getElementById("jump").click()
-
-
-					});
-				}
-
-				})
-				.catch(function(error) {
-					console.log("Error getting documents: ", error);
-				});
-			  } else {
-				alert("Not signed in. Why hack this site");
-			  }
-			});
-
-
-	</script>
-  </main>
 
 </html>
