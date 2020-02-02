@@ -45,79 +45,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-	  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-	<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
 
-	<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-	<!-- <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-analytics.js"></script>
-
-	<!-- Add Firebase products that you want to use -->
-	<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-firestore.js"></script>
-	<script>
-		  // Your web app's Firebase configuration
-		  var firebaseConfig = {
-			apiKey: "AIzaSyAvEkZc5g6B0yKAdwyavrgOftAHH2ZbToc",
-			authDomain: "hacksc2020-3a9d3.firebaseapp.com",
-			//databaseURL: "https://hacksc2020-3a9d3.firebaseio.com",
-			projectId: "hacksc2020-3a9d3",
-			/*storageBucket: "hacksc2020-3a9d3.appspot.com",
-			messagingSenderId: "448755823877",
-			appId: "1:448755823877:web:c46d94bc3f970f226bf36c",
-			measurementId: "G-3G42FB3502"*/
-		  };
-		  // Initialize Firebase
-		  firebase.initializeApp(firebaseConfig);
-		  <!-- firebase.analytics();
-		  var db = firebase.firestore();
-
-		function register(){
-			var user = firebase.auth().currentUser;
-
-			/*var fn = document.getElementById('fn').value;
-			var ln = document.getElementById('ln').value;
-			var c = document.getElementById('c').value;
-				  db.collection("Lawyer").add({
-					firstName: fn,
-					lastName: ln,
-          cellPhone: c,
-					id : user.uid
-				})
-				.then(function(docRef) {
-					console.log("Document written with ID: ", docRef.id);
-				})
-				.catch(function(error) {
-					console.error("Error adding document: ", error);
-				});
-*/
-      firebase.auth().onAuthStateChanged(function(user) {
-          if (user) {
-            // User is signed in.
-            var fn = document.getElementById('fn').value;
-            var ln = document.getElementById('ln').value;
-            var aa = document.getElementById('an').value;
-                db.collection("Immigrant").add({
-                firstName: fn,
-                lastName: ln,
-                aNumber: aa,
-                id : user.uid
-              })
-              .then(function(docRef) {
-                console.log("Document written with ID: ", docRef.id);
-				document.getElementById('finish').click();
-              })
-              .catch(function(error) {
-                console.error("Error adding document: ", error);
-              });
-
-          } else {
-            // No user is signed in.
-            alert("no user");
-          }
-        });
-		}
-
-	</script>
     <script>
      function change(){
        var stuff = document.getElementById("Bttn").innerHTML;
@@ -188,6 +116,7 @@
       <p id = "IDT">Give a unique, 4-digit Username ID (WRITE DOWN AND MAKE SURE TO REMEMBER):</p>
         <input type="number" name="id" id="ld" placeholder="1234" value="" min="0" max="9999" required>
         <p id = "fnt">First name:</p>
+
         <input type="text" name="firstname" id="fn" placeholder="John" value="" required><br>
         <p id = "lnt">Last name:</p>
         <input type="text" name="lastname" id="ln" placeholder="Doe" value="" required><br>
@@ -248,10 +177,88 @@
       </form>
     </div>
 	<div class="container">
-	        <button type="button" class="btn btn-primary" onclick = "register()">Register</button>
+	        <button type="button" class="btn btn-primary" onclick = "register()"> Register</button>
 	</div>
 
 	<a id="finish" style="visibility:hidden"  href="../improfile/improfile.html">hidden</a>
+	
+		  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
+
+	<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+	<!-- <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-analytics.js"></script>
+
+	<!-- Add Firebase products that you want to use -->
+	<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-firestore.js"></script>
+	<script>
+		  // Your web app's Firebase configuration
+		  var firebaseConfig = {
+			apiKey: "AIzaSyAvEkZc5g6B0yKAdwyavrgOftAHH2ZbToc",
+			authDomain: "hacksc2020-3a9d3.firebaseapp.com",
+			//databaseURL: "https://hacksc2020-3a9d3.firebaseio.com",
+			projectId: "hacksc2020-3a9d3",
+			/*storageBucket: "hacksc2020-3a9d3.appspot.com",
+			messagingSenderId: "448755823877",
+			appId: "1:448755823877:web:c46d94bc3f970f226bf36c",
+			measurementId: "G-3G42FB3502"*/
+		  };
+		  // Initialize Firebase
+		  firebase.initializeApp(firebaseConfig);
+		  <!-- firebase.analytics();
+		  var db = firebase.firestore();
+
+		function register(){
+		alert("hey");
+			var user = firebase.auth().currentUser;
+
+			/*var fn = document.getElementById('fn').value;
+			var ln = document.getElementById('ln').value;
+			var c = document.getElementById('c').value;
+				  db.collection("Lawyer").add({
+					firstName: fn,
+					lastName: ln,
+          cellPhone: c,
+					id : user.uid
+				})
+				.then(function(docRef) {
+					console.log("Document written with ID: ", docRef.id);
+				})
+				.catch(function(error) {
+					console.error("Error adding document: ", error);
+				});
+*/
+      firebase.auth().onAuthStateChanged(function(user) {
+          if (user) {
+            // User is signed in.
+            var fn = document.getElementById('fn').value;
+            var ln = document.getElementById('ln').value;
+            var aa = document.getElementById('an').value;
+                db.collection("Immigrant").add({
+                firstName: fn,
+                lastName: ln,
+                aNum: aa,
+                id : user.uid
+				//flag : "none"
+              })
+              .then(function(docRef) {
+                console.log("Document written with ID: ", docRef.id);
+				document.getElementById('finish').click();
+              })
+              .catch(function(error) {
+                console.error("Error adding document: ", error);
+              });
+
+          } else {
+            // No user is signed in.
+            alert("no user");
+          }
+        });
+		}
+
+	</script>
+	
+	
   </main>
 
   </html>

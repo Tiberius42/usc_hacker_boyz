@@ -145,7 +145,7 @@
     <div class="col-sm">
       <h1>Actions:</h1><p>
 
-      <a id = "Danger"class="btn btn-danger" onclick = "registerCase()">Click here if you have been detained!</a> <p>
+      <a id = "Danger"class="btn btn-danger" onclick = "registerCase()">Click here if this user have been detained</a> <p>
       <!--<button>Toggle between hide() and show()</button>-->
       <a id = "Update" class="btn btn-info" href="imupdate/imupdate.html" >Update Your Information</a> <!--Maybe fix later??-->
       <!--<button type="button" class="btn btn-info">Update Your Information</button>-->
@@ -183,7 +183,8 @@
 
     function registerCase(){
       var user = firebase.auth().currentUser;
-      var immigID = "garbage_garbage_garbage";
+	  alert(user.uid);
+      var immigID = user.uid;
       var lawyerID = "Unassigned";
           db.collection("Case").add({
           ImmigrantID: immigID,
@@ -195,8 +196,40 @@
         .catch(function(error) {
           console.error("Error adding document: ", error);
     });
+	
 
+          var temp = db.collection('Immigrant').where('id', '==', user.uid);
 
+          //alert(temp.data().LawyerID);
+
+          temp.get().then(function (querySnapshot) {
+            querySnapshot.forEach(function (doc) {
+			
+			alert("WE HAVE OUR CURRENT IM OBJECT");
+              //alert("hello there");
+              //doc.data().LawyerID = "" + user.uid;
+              /*doc.set({
+                LawyerID: "" + user.uid
+              })*/
+              var temp_id = doc.id;
+              
+              var imRef = db.collection("Immigrant").doc(temp_id);
+
+              // Set the "capital" field of the city 'DC'
+              return imRef.update({
+                  flag: "red"
+              })
+              .then(function() {
+			  alert("set to red");
+                  console.log("Document successfully updated!");
+              })
+              .catch(function(error) {
+                  // The document probably doesn't exist.
+                  console.error("Error updating document: ", error);
+              });
+            });
+          });
+		alert("Thankyou. This individuals data is now avaliable to potential lawyers");
 }
   </script>
   <button id="Bttn" label="Traducir" type="btn" onclick="change()" onclick = "onClick">Traducir</button>

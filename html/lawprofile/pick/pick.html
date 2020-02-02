@@ -84,7 +84,7 @@
 
         function addClient(ID){
           //alert(ID);
-
+		
           
           var user = firebase.auth().currentUser;
 
@@ -106,7 +106,7 @@
 
               // Set the "capital" field of the city 'DC'
               return washingtonRef.update({
-                  LawyerID: "" + user.uid
+                  LawyerIDf: "" + user.uid
               })
               .then(function() {
                   console.log("Document successfully updated!");
@@ -120,7 +120,7 @@
 
           //alert(temp_id);
 
-          
+          alert("Client Added. You can now view them on your cases page.");
           //db.collection('Case').where('ImmigrantID', '==', ID).doc("LawyerID") = user.uid;
 
           //temp.ref("LawyerID") = user.uid;
@@ -136,10 +136,10 @@
               querySnapshot.forEach(function (doc) {
                 //alert(doc.data());
                 var ID = doc.data().id;
-                var fn = doc.data().FirstName;
-                var ln = doc.data().LasName;
+                var fn = doc.data().firstName;
+                var ln = doc.data().lastName;
                 var dob = "" + doc.data().DateOfBirth;
-
+				var aa = doc.data().aNum;
 
                 var date = new Date(dob);
                 /*
@@ -155,13 +155,13 @@
                 var formattedTime = (date.getMonth() > 8) ? (date.getMonth() + 1) : ('0' + (date.getMonth() + 1)) + '/' + ((date.getDate() > 9) ? date.getDate() : ('0' + date.getDate())) + '/' + date.getFullYear();
 
 
-                temp2 = "<a href='#' class='list-group-item list-group-item-action' onclick='addClient(\"" + ID + "\")'>" + "Username: " + ID + " | " + fn + " " + ln + " | DOB: " + formattedTime + "</a>";
+                temp2 = "<a href='#' class='list-group-item list-group-item-action' onclick='addClient(\"" + ID + "\")'>" +  fn + " " + ln + " | #A: " + aa + "</a>";
                 total = total + temp2;
                 alert(temp2);
                 //alert(doc.data().id);
                 //alert(doc.data().LasName);
                 //alert(doc.data().FirstName);
-                document.getElementById("listGroup").innerHTML = temp2;
+                document.getElementById("listGroup").innerHTML += temp2;
             });
           });/*
           alert("Help");
