@@ -57,28 +57,28 @@
  <div class="container">
    <div class="row">
      <div class="col-sm">
-       <h1>Your Information:</h1><p><p>
+       <h1>Your Information:</h1><p><p id ="ID">
 
-       ID: <div> </div><p>
+       ID: <div> </div><p id ="FN">
 
-       First Name: <div> </div><p>
+       First Name: <div> </div><p id =LN >
 
-       Last Name: <div> </div><p>
+       Last Name: <div> </div><p id="DOB">
 
-       Date of Birth: <div> </div><p>
+       Date of Birth: <div> </div><p id = "COO">
 
-       Country of Origin: <div> </div><p>
+       Country of Origin: <div> </div><p id = "PL">
 
-       Primary Language: <div> </div><p>
+       Primary Language: <div> </div><p id = "C">
 
-      Contacts: <p> <div> </div> <p>
+      Contacts: <p> <div> </div> <p id = "Actions">
     </div>
     <div class="col-sm">
       <h1>Actions:</h1><p>
 
-      <a class="btn btn-danger" onclick = "registerCase()">Click here if you have been detained!</a> <p>
+      <a id = "Danger"class="btn btn-danger" onclick = "registerCase()">Click here if you have been detained!</a> <p>
       <!--<button>Toggle between hide() and show()</button>-->
-      <a class="btn btn-info" href="imupdate/imupdate.html" >Update Your Information</a> <!--Maybe fix later??-->
+      <a id = "Update" class="btn btn-info" href="imupdate/imupdate.html" >Update Your Information</a> <!--Maybe fix later??-->
       <!--<button type="button" class="btn btn-info">Update Your Information</button>-->
     </div>
   </div>
@@ -110,7 +110,7 @@
       <!-- firebase.analytics();
       var db = firebase.firestore();
 
-    
+
     function registerCase(){
       var user = firebase.auth().currentUser;
       var immigID = "garbage_garbage_garbage";
@@ -129,8 +129,39 @@
 
 }
   </script>
-
-  
+  <button id="Bttn" label="Traducir" type="btn" onclick="change()" onclick = "onClick">Traducir</button>
+      <script>
+       function change(){
+         var stuff = document.getElementById("Bttn").innerHTML;
+         if(stuff =="Traducir")
+         {
+        document.getElementById('ID').innerHTML = "Identidad";
+        document.getElementById('FN').innerHTML = "Nombre";
+        document.getElementById('LN').innerHTML = "Apellido";
+        document.getElementById('DOB').innerHTML = "Fecha de Nacimiento";
+        document.getElementById('COO').innerHTML = "Pais de Origen";
+        document.getElementById('PL').innerHTML = "Lengua Materna";
+        document.getElementById('C').innerHTML = "Contactos";
+        document.getElementById('Actions').innerHTML = "Acciónes";
+        document.getElementById('Danger').innerHTML = "Hacer Clic si se está Detenida";
+        document.getElementById('Update').innerHTML = "Actualizar tus datos";
+        document.getElementById('Bttn').innerHTML = "Translate" ;
+             }
+        else {
+          document.getElementById('ID').innerHTML = "Identity";
+          document.getElementById('FN').innerHTML = "First Name";
+          document.getElementById('LN').innerHTML = "Last Name";
+          document.getElementById('DOB').innerHTML = "Date of Birth";
+          document.getElementById('COO').innerHTML = "Country of Origin";
+          document.getElementById('C').innerHTML = "Contacts";
+          document.getElementById('PL').innerHTML = "Primary Language";
+          document.getElementById('Actions').innerHTML = "Actions";
+          document.getElementById('Danger').innerHTML = "Click this if Detained";
+          document.getElementById('Update').innerHTML = "Change your Information";
+         document.getElementById('Bttn').innerHTML = "Traducir";
+        }
+      };
+    </script>
 
   </main>
 
