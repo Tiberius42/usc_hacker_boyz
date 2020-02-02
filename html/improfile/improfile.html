@@ -119,6 +119,7 @@
           db.collection("Case").add({
           ImmigrantID: immigID,
           LawyerID: lawyerID,
+          Active_Cases: "",
         })
         .then(function(docRef) {
           console.log("Document written with ID: ", docRef.id);
