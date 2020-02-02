@@ -38,19 +38,35 @@
   </body>
 
   <main>
-
+<h4 id = "Alert" align = "center">Alert the Database that a Family Member is Detained</h4>
     <div class="container">
       <form action="../lawprofile/lawprofile.html">
-        User ID:<br>
+        <p id="ID">User ID:</p>
         <input type="number" name="id" id="ld" placeholder="1234" value="" min="0" max="9999" required><br>
-        Last name:<br>
+        <p id="Ln">Last name:</p>
         <input type="text" hasOwnProperty="oninput" name="lastname" id="ln" placeholder="Doe" value="" required><br>
         <input type="submit" value="Submit" onclick = "register()">
       </form>
     </div>
+    <button id="Bttn" label="Traducir" type="btn" onclick="change()" onclick = "onClick">Traducir</button>
 
     <script>
-
+     function change(){
+       var stuff = document.getElementById("Bttn").innerHTML;
+       if(stuff =="Traducir")
+       {
+         document.getElementById("ID").innerHTML = "Clave Personal";
+         document.getElementById("Ln").innerHTML = "Apellido";
+         document.getElementById("Alert").innerHTML = "Advierte al Abogado que un familiar se está detenido";
+         document.getElementById("Bttn").innerHTML = "Translate";
+       }
+       else {
+         document.getElementById("Bttn").innerHTML = "Traducir";
+         document.getElementById("ID").innerHTML = "User ID";
+         document.getElementById("Alert").innerHTML = "Alert the Database that a Family Member is Detained";
+         document.getElementById("Ln").innerHTML = "Last Name";
+       }
+     }
     </script>
 
   </main>
