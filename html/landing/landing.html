@@ -21,10 +21,10 @@
       <h2> HackSC - Equity</h2>
       <ul class="nav nav-pills nav-justified nav-fill pills-peach-gradient">
         <li class="nav-item">
-          <a class="nav-item nav-link" a href="../../index.html">Home</a>
+          <a class="nav-item nav-link active" a href="index.html">Home</a>
         </li>
         <li class = "nav-item">
-          <a class="nav-item nav-link" href="../about/about.html">About</a>
+          <a class="nav-item nav-link" href="html/about/about.html">About</a>
         </li>
       </ul>
     </div>
@@ -51,7 +51,7 @@
          </div>
        </div>
      </div>
-	 
+
 	 	<a id="jump" type="button" style="visibility:hidden" href="../lawprofile/lawprofile.html">Jump</a>
 	 	<a id="jump2" type="button" style="visibility:hidden" href="../improfile/im_landing.html">Jump2</a>
 
@@ -63,7 +63,7 @@
       });
     });
   </script>
-  
+
   	  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
 	<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
 
@@ -90,7 +90,7 @@
 		  <!-- firebase.analytics();
 		  var db = firebase.firestore();
 			//window.onload = check;
-	
+
 			firebase.auth().onAuthStateChanged(function(user) {
 			  if (user) {
 				// User is signed in.
@@ -101,14 +101,14 @@
 				db.collection("Lawyer").where("id", "==", uid)
 				.get()
 				.then(function(querySnapshot) {
-				
+
 				if(querySnapshot.empty){
 					//USER NEEDS TO REGISTER
 					alert("user needs to register");
 						db.collection("Immigrant").where("id", "==", uid)
 						.get()
 						.then(function(querySnapshot) {
-						
+
 						if(querySnapshot.empty){
 							//USER NEEDS TO REGISTER
 							alert("user needs to register");
@@ -121,7 +121,7 @@
 								document.getElementById("jump2").click()
 							});
 						}
-							
+
 						})
 				}
 				else{
@@ -131,10 +131,10 @@
 						//JUMP TO LANDING
 						document.getElementById("jump").click()
 
-						
+
 					});
 				}
-					
+
 				})
 				.catch(function(error) {
 					console.log("Error getting documents: ", error);
@@ -143,8 +143,8 @@
 				alert("Not signed in. Why hack this site");
 			  }
 			});
-	
-	
+
+
 	</script>
   </main>
 
