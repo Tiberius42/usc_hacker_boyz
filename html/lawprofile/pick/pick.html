@@ -85,9 +85,9 @@
         function addClient(ID){
           var user = firebase.auth().currentUser;
 
-          var temp = db.collection('Lawyer').where('id', '==', user.uid);
+          var temp = db.collection('Case').where('ImmigrantID', '==', ID);
 
-          temp.Active_Cases.push(ID);
+          temp.LawyerID = user.uid;
         }
 
         function listAll(){
