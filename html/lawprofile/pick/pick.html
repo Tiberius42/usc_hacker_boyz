@@ -13,7 +13,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </head>
 
-  <body>
+  <body onload = "listAll()">
 
     <div class="container">
       <h2> HackSC - Equity</h2>
@@ -29,17 +29,14 @@
       </ul>
     </div>
 
+    <script>
+      //document.write
+    </script>
     
     <div class="container">
       <div class="row">
-        <div class="list-group">
-        <a href="#" id = "flagged1" class="list-group-item list-group-item-action" onclick = "alert("jask")">
-          Cras justo odio
-        </a>
-        <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-        <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
-        <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
-        <a href="#" class="list-group-item list-group-item-action" tabindex="-1" aria-disabled="true">Vestibulum at eros</a>
+        <div id = "listGroup" class="list-group">
+          
         </div>
       </div>
     </div>
@@ -83,20 +80,44 @@
           <!-- firebase.analytics();
           var db = firebase.firestore();
 
-          var flagged1 = db.ref().child("Immigrant").
+          //var flagged1 = db.ref().child("Immigrant").
+
+          
 
         function listAll(){
+          //alert("got into listAll");
+          var total  = "";
           
-          var temp = db.collectionGroup('Immigrant').where('flag', '==', 'red');
+          var temp = db.collection('Immigrant').where('flag', '==', 'red');
+          var temp2 = "";
           temp.get().then(function (querySnapshot) {
               querySnapshot.forEach(function (doc) {
-                alert("heab?");
-                var ID = doc.id;
-                var fn = doc.FirstName;
-                var ln = doc.LastName;
-                alert(ID);
-                alert(fn);
-                alert(ln);
+                //alert(doc.data());
+                var ID = doc.data().id;
+                var fn = doc.data().FirstName;
+                var ln = doc.data().LasName;
+                var dob = "" + doc.data().DateOfBirth;
+
+
+                var date = new Date(dob * 1000);
+                // Hours part from the timestamp
+                var year = date.getFullYear();
+                // Minutes part from the timestamp
+                var month = ("0" + (date.getMonth() + 1)).slice(-2);
+                // Seconds part from the timestamp
+                var day = ("0" + date.getDate()).slice(-2);
+
+                // Will display time in 10:30:23 format
+                var formattedTime = "" + month + '/' + day + '/' + year;
+
+
+                temp2 = "<a href='#' class='list-group-item list-group-item-action'>" + "Username: " + ID + " | " + fn + " " + ln + " | DOB: " + formattedTime + "</a>";
+                total = total + temp2;
+                //alert(temp2);
+                //alert(doc.data().id);
+                //alert(doc.data().LasName);
+                //alert(doc.data().FirstName);
+                document.getElementById("listGroup").innerHTML = temp2;
             });
           });/*
           alert("Help");
@@ -113,7 +134,17 @@
               }
             }
           }*/
-            
+
+          //alert(total);
+          /*
+          callback1(total, function(){
+            document.getElementById("listGroup").innerHTML = total;
+          });
+          */
+            //return total;
+
+            //document.getElementById("listGroup").innerHTML = temp2;
+            //func(alert, 1000, total);
         }
         
         /*
