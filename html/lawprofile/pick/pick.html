@@ -82,7 +82,13 @@
 
           //var flagged1 = db.ref().child("Immigrant").
 
-          
+        function addClient(ID){
+          var user = firebase.auth().currentUser;
+
+          var temp = db.collection('Lawyer').where('id', '==', user.uid);
+
+          temp.Active_Cases.push(ID);
+        }
 
         function listAll(){
           //alert("got into listAll");
@@ -99,21 +105,23 @@
                 var dob = "" + doc.data().DateOfBirth;
 
 
-                var date = new Date(dob * 1000);
+                var date = new Date(dob);
+                /*
                 // Hours part from the timestamp
                 var year = date.getFullYear();
                 // Minutes part from the timestamp
                 var month = ("0" + (date.getMonth() + 1)).slice(-2);
                 // Seconds part from the timestamp
                 var day = ("0" + date.getDate()).slice(-2);
+                */
 
                 // Will display time in 10:30:23 format
-                var formattedTime = "" + month + '/' + day + '/' + year;
+                var formattedTime = (date.getMonth() > 8) ? (date.getMonth() + 1) : ('0' + (date.getMonth() + 1)) + '/' + ((date.getDate() > 9) ? date.getDate() : ('0' + date.getDate())) + '/' + date.getFullYear();
 
 
-                temp2 = "<a href='#' class='list-group-item list-group-item-action'>" + "Username: " + ID + " | " + fn + " " + ln + " | DOB: " + formattedTime + "</a>";
+                temp2 = "<a href='#' class='list-group-item list-group-item-action' onClick='addClient(ID)'>" + "Username: " + ID + " | " + fn + " " + ln + " | DOB: " + formattedTime + "</a>";
                 total = total + temp2;
-                //alert(temp2);
+                alert(temp2);
                 //alert(doc.data().id);
                 //alert(doc.data().LasName);
                 //alert(doc.data().FirstName);
