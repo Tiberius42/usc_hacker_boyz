@@ -23,6 +23,7 @@
         </li>
         <li class = "nav-item">
           <a class="nav-item nav-link active" href="lawprofile.html">Profile</a>
+        </li>
         <li class = "nav-item">
           <a class="nav-item nav-link" href="../about/about.html">About</a>
         </li>
@@ -37,25 +38,21 @@
   </body>
 
   <main>
-<h3 align="center">This is the Lawyer Page</h3>
-    <div class="container" background-color:"lightblue" align="center">
-      <div class="row">
-        <div class="col-4"></div>
-        <div class="col-4">
-          <a href="view/view.html" class="btn btn-peach-gradient">View Cases</a>
-        </div>
-        <div class="w-100"></div>
-        <div class="col-4"></div>
-        <div class="col-4">
-          <a href="pick/pick.html" class="btn btn-peach-gradient">Pick Cases</a>
-        </div>
-        <div class="w-100"></div>
-        <div class="col-4"></div>
-        <div class="col-4">
-            <a href="lawupdate/lawupdate.html" class="btn btn-peach-gradient">Update Profile</a>
-        </div>
-      </div>
+
+    <div class="container">
+      <form action="../lawprofile/lawprofile.html">
+        User ID:<br>
+        <input type="number" name="id" id="ld" placeholder="1234" value="" min="0" max="9999" required><br>
+        Last name:<br>
+        <input type="text" hasOwnProperty="oninput" name="lastname" id="ln" placeholder="Doe" value="" required><br>
+        <input type="submit" value="Submit" onclick = "register()">
+      </form>
     </div>
+
+    <script>
+
+    </script>
+
   </main>
 
 </html>
