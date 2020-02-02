@@ -13,7 +13,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </head>
 
-  <body>
+  <body onload = "listAll()">
 
     <div class="container">
       <h2> HackSC - Equity</h2>
@@ -29,17 +29,14 @@
       </ul>
     </div>
 
+    <script>
+      //document.write
+    </script>
     
     <div class="container">
       <div class="row">
-        <div class="list-group">
-        <a href="#" id = "flagged1" class="list-group-item list-group-item-action" onclick = "alert("jask")">
-          Cras justo odio
-        </a>
-        <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-        <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
-        <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
-        <a href="#" class="list-group-item list-group-item-action" tabindex="-1" aria-disabled="true">Vestibulum at eros</a>
+        <div id = "listGroup" class="list-group">
+          
         </div>
       </div>
     </div>
@@ -83,20 +80,88 @@
           <!-- firebase.analytics();
           var db = firebase.firestore();
 
-          var flagged1 = db.ref().child("Immigrant").
+          //var flagged1 = db.ref().child("Immigrant").
+
+        function addClient(ID){
+          //alert(ID);
+
+          
+          var user = firebase.auth().currentUser;
+
+          var temp = db.collection('Case').where('ImmigrantID', '==', ID);
+
+          //alert(temp.data().LawyerID);
+
+          var temp_id = "";
+          temp.get().then(function (querySnapshot) {
+            querySnapshot.forEach(function (doc) {
+              //alert("hello there");
+              //doc.data().LawyerID = "" + user.uid;
+              /*doc.set({
+                LawyerID: "" + user.uid
+              })*/
+              temp_id = doc.id;
+              
+              var washingtonRef = db.collection("Case").doc(temp_id);
+
+              // Set the "capital" field of the city 'DC'
+              return washingtonRef.update({
+                  LawyerID: "" + user.uid
+              })
+              .then(function() {
+                  console.log("Document successfully updated!");
+              })
+              .catch(function(error) {
+                  // The document probably doesn't exist.
+                  console.error("Error updating document: ", error);
+              });
+            });
+          });
+
+          //alert(temp_id);
+
+          
+          //db.collection('Case').where('ImmigrantID', '==', ID).doc("LawyerID") = user.uid;
+
+          //temp.ref("LawyerID") = user.uid;
+        }
 
         function listAll(){
+          //alert("got into listAll");
+          var total  = "";
           
-          var temp = db.collectionGroup('Immigrant').where('flag', '==', 'red');
+          var temp = db.collection('Immigrant').where('flag', '==', 'red');
+          var temp2 = "";
           temp.get().then(function (querySnapshot) {
               querySnapshot.forEach(function (doc) {
-                alert("heab?");
-                var ID = doc.id;
-                var fn = doc.FirstName;
-                var ln = doc.LastName;
-                alert(ID);
-                alert(fn);
-                alert(ln);
+                //alert(doc.data());
+                var ID = doc.data().id;
+                var fn = doc.data().FirstName;
+                var ln = doc.data().LasName;
+                var dob = "" + doc.data().DateOfBirth;
+
+
+                var date = new Date(dob);
+                /*
+                // Hours part from the timestamp
+                var year = date.getFullYear();
+                // Minutes part from the timestamp
+                var month = ("0" + (date.getMonth() + 1)).slice(-2);
+                // Seconds part from the timestamp
+                var day = ("0" + date.getDate()).slice(-2);
+                */
+
+                // Will display time in 10:30:23 format
+                var formattedTime = (date.getMonth() > 8) ? (date.getMonth() + 1) : ('0' + (date.getMonth() + 1)) + '/' + ((date.getDate() > 9) ? date.getDate() : ('0' + date.getDate())) + '/' + date.getFullYear();
+
+
+                temp2 = "<a href='#' class='list-group-item list-group-item-action' onclick='addClient(\"" + ID + "\")'>" + "Username: " + ID + " | " + fn + " " + ln + " | DOB: " + formattedTime + "</a>";
+                total = total + temp2;
+                alert(temp2);
+                //alert(doc.data().id);
+                //alert(doc.data().LasName);
+                //alert(doc.data().FirstName);
+                document.getElementById("listGroup").innerHTML = temp2;
             });
           });/*
           alert("Help");
@@ -113,7 +178,17 @@
               }
             }
           }*/
-            
+
+          //alert(total);
+          /*
+          callback1(total, function(){
+            document.getElementById("listGroup").innerHTML = total;
+          });
+          */
+            //return total;
+
+            //document.getElementById("listGroup").innerHTML = temp2;
+            //func(alert, 1000, total);
         }
         
         /*

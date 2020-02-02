@@ -73,6 +73,7 @@
 
 		function register(){
 			var user = firebase.auth().currentUser;
+
 			var fn = document.getElementById('fn').value;
 			var ln = document.getElementById('ln').value;
 			var c = document.getElementById('c').value;
@@ -89,11 +90,34 @@
 					console.error("Error adding document: ", error);
 				});
 
+      firebase.auth().onAuthStateChanged(function(user) {
+          if (user) {
+            // User is signed in.
+            var fn = document.getElementById('fn').value;
+            var ln = document.getElementById('ln').value;
+            var ce = document.getElementById('c').value;
+                db.collection("Lawyer").add({
+                firstName: fn,
+                lastName: ln,
+                cellPhone: ce,
+                id : user.uid
+              })
+              .then(function(docRef) {
+                console.log("Document written with ID: ", docRef.id);
+              })
+              .catch(function(error) {
+                console.error("Error adding document: ", error);
+              });
 
+          } else {
+            // No user is signed in.
+            alert("no user");
+          }
+        });
 		}
 
 		function check(){
-			var lawRef = db.collection("Lawyer");
+		/*	var lawRef = db.collection("Lawyer");
 			var user = firebase.auth().currentUser;
 			var uid = user.uid;
 				db.collection("cities").where("capital", "==", true)
@@ -109,7 +133,7 @@
 					})
 					.catch(function(error) {
 						console.log("Error getting documents: ", error);
-					});
+					});*/
 		}
 	</script>
 
