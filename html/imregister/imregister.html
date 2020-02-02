@@ -38,68 +38,67 @@
         </li>
       </ul>
     </div>
-
+<button id="Bttn" label="Traducir" type="btn" onclick="change()" onclick = "onClick">Traducir</button>
 <div class="container">
   <form action="../improfile/improfile.html">
-  <p id = "IDT">Give a unique Username ID</p><br>
+  <p id = "IDT">Give a unique Username ID</p>
     <input type="text" name="UserID" id="ID" placeholder ="Something that you will Remember" required><br>
-    <p id = "fnt">First name:</p><br>
+    <p id = "fnt">First name:</p>
     <input type="text" name="firstname" id="fn" placeholder="John" value="" required><br>
-    <p id = "lnt">Last name:</p><br>
+    <p id = "lnt">Last name:</p>
     <input type="text" name="lastname" id="ln" placeholder="Doe" value="" required><br>
-    <p id = dobt>Date of Birth:</p><br>
+    <p id = dobt>Date of Birth:</p>
     <input type="text" name="DOB" id="dob" placeholder="5/5/55" value="" required><br>
-  <p id = "ant">  A#:</p><br>
+  <p id = "ant">  A#:</p>
     <input type="text" name="aNum" id="an" placeholder="012345678" value="" required><br>
-    <p id = "coot">Country of Origin:</p><br>
+    <p id = "coot">Country of Origin:</p>
     <input type="text" name="country" id="coo" placeholder="Ruritania" value="" required><br>
-    <p id="plt">What is your primary language?:</p><br>
+    <p id="plt">What is your primary language?:</p>
     <input type="text" name="pLang" id="pl" placeholder="English" value="" required><br>
-    <p id = "olt">Do you speak any other languages?</p><br>
+    <p id = "olt">Do you speak any other languages?</p>
     <input type="radio" name="sLangBool" id="sltf" value="Yes" checked required> Yes<br>
     <input type="radio" name="sLangBool" id="sltf" value="No" required> No<br><br>
-    <p id = "slt">If so, which language(s)?</p><br>
+    <p id = "slt">If so, which language(s)?</p>
     <input type="text" name="sLang" id="sl" placeholder="Chinese, Spanish, etc." value="" required><br>
     <p id = ilangt>In what language would you like to be interviewed?</p><br>
     <input type="text" name="iLang" id="il" placeholder="English" value="" required><br>
-    <p id="rlangt">In which languages can you read?</p><br>
+    <p id="rlangt">In which languages can you read?</p>
     <input type="text" name="rLang" id="rl" placeholder="English, Chinese, etc." value="" required><br>
     <p id = "art">Have you ever spoken with or had an attorney represent you before the immigration court?</p><br>
     <input type="radio" name="aRep" id="ar" value="Yes" checked required> Yes<br>
     <input type="radio" name="aRep" id="ar" value="No" required> No<br><br>
-    <p id="ett">  When did you last enter the US?</p><br>
+    <p id="ett">  When did you last enter the US?</p>
     <input type="date" id="et" name="entryTime" required>
-  <p id="lewt">  Manner of last entry to the US:</p><br>
+  <p id="lewt">  Manner of last entry to the US:</p>
     <input type="radio" name="lEntryWay" id="lew" value="AA" checked required> AA<br>
     <input type="radio" name="lEntryWay" id="lew" value="EWI" required> EWI<br>
     <input type="radio" name="lEntryWay" id="lew" value="VISA" required> VISA<br>
     <input type="radio" name="lEntryWay" id="lew" value="Greencard" required> Greencard<br>
     <input type="radio" name="lEntryWay" id="lew" value="Other" required> Other<br><br>
-    <p id "ott">If "Other", explain:</p>
+    <p id = "ott">If "Other", explain:</p>
     <input type="text" name="lEntryPlace" id="lewd" placeholder="Details..." value="" required><br>
-    <p id "loct">Where exactly did you enter the US?<br>
+    <p id ="loct">Where exactly did you enter the US?</p>
     <input type="radio" name="loc" id="loc" value="Bridge" checked required>Bridge<br>
     <input type="radio" name="loc" id="loc" value="River" required> River<br>
     <input type="radio" name="loc" id="loc" value="Desert" required> Desert<br>
     <input type="radio" name="loc" id="loc" value="Other" required> Other<br><br>
-    <p id "ott">If "Other", explain:</p>
+    <p id ="ott">If "Other", explain:</p>
     <input type="text"  name="locd" placeholder="Details..." value="" required><br>
     <br>
   	<p id = "WaBt">If bridge/port of entry (POE): Before crossing the bridge/POE, were you made to wait or turned away?</p><br>
   	<input type="radio" name="Waited_at_Border" value="yes" checked> Yes<br>
   	<input type="radio" name="Waited_at_Border" value="no"> No<br><br>
-  	 If so, for how long?
-  	<input type="text" id="Wait_time" name="Wait_time"><br><br>
-  	Do you have family in the United States, and if so, who and what type of legal status do they have?
-  		If children, are they biological? If spouse, are you legally married?<br><br>
-  	<input type="text" id="Family" name="Family"><br><br>
-  	Do any of your family members in the US have any health or mental health challenges?<br>
-  	<input type="radio" name="Family_sick" value="" checked> Yes<br>
+  	<p id = "ist"> If so, for how long?</p>
+  	<input type="text" id="Wait_time" name="Wait_time">
+  	<p id= "cilt">Do you have family in the United States, and if so, who and what type of legal status do they have?
+  		If children, are they biological? If spouse, are you legally married?</p>
+  	<input type="text" id="Family" name="Family">
+  	<p id= "Famt"> Do any of your family members in the US have any health or mental health challenges?</p>
+  	<input type="radio" name="Family_sick" value="" checked>Yes<br>
   	<input type="radio" name="Family_sick" value="no"> No<br>
-
-  	<br>In total, how many people do you have here in the United States, including family and friends, that are willing to support you in your case?<br>
+</input>
+  	<p id ="itt">In total, how many people do you have here in the United States, including family and friends, that are willing to support you in your case?</p>
   	<input type="number" id="People_support" name="People_support">
-
   	<li>
   	<label for="Point_of_contact">Who is the best point of contact for your case?</label>
   	<input type="text" id="Point_of_contact" name="Point_of_contact">
@@ -216,8 +215,64 @@
       });
     }*/
     </script>
+    <script>
+     function change(){
+       var stuff = document.getElementById("Bttn").innerHTML;
+       if(stuff =="Traducir")
+       {
+         document.getElementById('Bttn').innerHTML = "Translate";
+         document.getElementById('IDT').innerHTML = "Da un Clave Personal";
+         document.getElementById('fnt').innerHTML = "Nombre";
+         document.getElementById('lnt').innerHTML = "Apellido";
+         document.getElementById('dobt').innerHTML = "Fecha de Nacimiento";
+         document.getElementById('ant').innerHTML = "Numero de Alienacion";
+         document.getElementById('coot').innerHTML = "Pais Materna";
+         document.getElementById('plt').innerHTML = "Lengua Materna";
+         document.getElementById('olt').innerHTML = "Sabes Otro Lenguajes?";
+         document.getElementById('slt').innerHTML = "Si es así, cuales?";
+         document.getElementById('ilangt').innerHTML = "En que idioma quieres hacer la entrevista?";
+         document.getElementById('rlangt').innerHTML = "En que idiomas puedes leer?";
+         document.getElementById('art').innerHTML = "Has hablado con un abodago antes?";
+         document.getElementById('ett').innerHTML = "Cuando entraste los Estados Unidos?";
+         document.getElementById('lewt').innerHTML = "Como entraste a los Estados Unidos?";
+         document.getElementById('ott').innerHTML = "Si es otro, Explica";
+         document.getElementById('loct').innerHTML = "Donde has cruzado la frontera?";
+         document.getElementById('WaBt').innerHTML = "Si has cruzado un puente o entrada oficial, tuvaste que esperar?";
+         document.getElementById('ist').innerHTML = "Si es asi, que tanto?";
+         document.getElementById('Famt').innerHTML = "Tienes familiares en los Estados Unidos con problemas de salud o mentales";
+         document.getElementById('itt').innerHTML = "Cuantos personas conoces que viven en los Estados Unidos, que le puede apoyar en este caso.";
+         document.getElementById('Point_of_contact').innerHTML = "Como Podemos Contactar este persona?";
+      }
+      else {
+        document.getElementById('IDT').innerHTML = "Give a unique Username ID";
+        document.getElementById('fnt').innerHTML = "First name:";
+        document.getElementById('lnt').innerHTML = "Last name:";
+        document.getElementById('dobt').innerHTML = "Date of Birth:";
+        document.getElementById('ant').innerHTML = "A#:";
+        document.getElementById('coot').innerHTML = "Country of Origin:";
+        document.getElementById('plt').innerHTML = "What is your primary language?:";
+        document.getElementById('olt').innerHTML = "Do you speak any other languages?";
+        document.getElementById('slt').innerHTML = "If so, which language(s)?";
+        document.getElementById('ilangt').innerHTML = "In what language would you like to be interviewed?";
+        document.getElementById('rlangt').innerHTML = "In which languages can you read?";
+        document.getElementById('art').innerHTML = "Have you ever spoken with or had an attorney represent you before the immigration court?";
+        document.getElementById('ett').innerHTML = "When did you last enter the US?";
+        document.getElementById('lewt').innerHTML = "Manner of last entry to the US:";
+        document.getElementById('ott').innerHTML = "If Other, explain:";
+        document.getElementById('loct').innerHTML = "Where exactly did you enter the US?";
+        document.getElementById('WaBt').innerHTML = "If bridge/port of entry (POE): Before crossing the bridge/POE, were you made to wait or turned away?";
+        document.getElementById('ist').innerHTML = "If so, for how long?";
+        document.getElementById('Famt').innerHTML = "Do any of your family members in the US have any health or mental health challenges?";
+        document.getElementById('itt').innerHTML = "In total, how many people do you have here in the United States, including family and friends, that are willing to support you in your case";
+        document.getElementById('Point_of_contact').innerHTML = "How do we contact this person";
 
+        document.getElementById('Bttn').innerHTML = "Traducir" ;
+      }
+    };
+     </script>
   </body>
+
+
 
   <main>
 
