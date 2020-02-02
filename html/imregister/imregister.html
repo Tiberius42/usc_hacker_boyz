@@ -38,7 +38,7 @@
         </li>
       </ul>
     </div>
-<button id="Bttn" label="Traducir" type="btn" onclick="change()" onclick = "onClick">Traducir</button>
+<button id="Bttn" label="Traducir" type="btn" onclick="change()">Traducir</button>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -70,34 +70,38 @@
          document.getElementById('loct').innerHTML = "Donde has cruzado la frontera?";
          document.getElementById('WaBt').innerHTML = "Si has cruzado un puente o entrada oficial, tuvaste que esperar?";
          document.getElementById('ist').innerHTML = "Si es asi, que tanto?";
-         document.getElementById('Famt').innerHTML = "Tienes familiares en los Estados Unidos con problemas de salud o mentales";
+         document.getElementById("cilt").innerHTML = "Tienes familiares que viven en los Estados Unidos? Que estado Legal Tienen? Son hijos biologicos? Estás casado de ley?"
+         document.getElementById('Famt').innerHTML = "Tienes familiares en los Estados Unidos con problemas de salud o con problemas mentales";
          document.getElementById('itt').innerHTML = "Cuantos personas conoces que viven en los Estados Unidos, que le puede apoyar en este caso.";
-         document.getElementById('Point_of_contact').innerHTML = "Como Podemos Contactar este persona?";
+         document.getElementById('Point_of_contact').innerHTML = "Quien es el Primer Contacto para su caso?";
+         document.getElementById('Point_of_contact2').innerHTML = "Como Podemos Contactar este persona?";
+
       }
       else {
+        document.getElementById('Bttn').innerHTML = "Traducir"
         document.getElementById('IDT').innerHTML = "Give a unique Username ID";
-        document.getElementById('fnt').innerHTML = "First name:";
-        document.getElementById('lnt').innerHTML = "Last name:";
-        document.getElementById('dobt').innerHTML = "Date of Birth:";
-        document.getElementById('ant').innerHTML = "A#:";
-        document.getElementById('coot').innerHTML = "Country of Origin:";
-        document.getElementById('plt').innerHTML = "What is your primary language?:";
-        document.getElementById('olt').innerHTML = "Do you speak any other languages?";
-        document.getElementById('slt').innerHTML = "If so, which language(s)?";
-        document.getElementById('ilangt').innerHTML = "In what language would you like to be interviewed?";
-        document.getElementById('rlangt').innerHTML = "In which languages can you read?";
-        document.getElementById('art').innerHTML = "Have you ever spoken with or had an attorney represent you before the immigration court?";
-        document.getElementById('ett').innerHTML = "When did you last enter the US?";
-        document.getElementById('lewt').innerHTML = "Manner of last entry to the US:";
-        document.getElementById('ott').innerHTML = "If Other, explain:";
-        document.getElementById('loct').innerHTML = "Where exactly did you enter the US?";
-        document.getElementById('WaBt').innerHTML = "If bridge/port of entry (POE): Before crossing the bridge/POE, were you made to wait or turned away?";
-        document.getElementById('ist').innerHTML = "If so, for how long?";
-        document.getElementById('Famt').innerHTML = "Do any of your family members in the US have any health or mental health challenges?";
-        document.getElementById('itt').innerHTML = "In total, how many people do you have here in the United States, including family and friends, that are willing to support you in your case";
-        document.getElementById('Point_of_contact').innerHTML = "How do we contact this person";
-
-        document.getElementById('Bttn').innerHTML = "Traducir" ;
+               document.getElementById('fnt').innerHTML = "First name:";
+               document.getElementById('lnt').innerHTML = "Last name:";
+               document.getElementById('dobt').innerHTML = "Date of Birth:";
+               document.getElementById('ant').innerHTML = "A#:";
+               document.getElementById('coot').innerHTML = "Country of Origin:";
+               document.getElementById('plt').innerHTML = "What is your primary language?:";
+               document.getElementById('olt').innerHTML = "Do you speak any other languages?";
+               document.getElementById('slt').innerHTML = "If so, which language(s)?";
+               document.getElementById('ilangt').innerHTML = "In what language would you like to be interviewed?";
+               document.getElementById('rlangt').innerHTML = "In which languages can you read?";
+               document.getElementById('art').innerHTML = "Have you ever spoken with or had an attorney represent you before the immigration court?";
+               document.getElementById('ett').innerHTML = "When did you last enter the US?";
+               document.getElementById('lewt').innerHTML = "Manner of last entry to the US:";
+               document.getElementById('ott').innerHTML = "If Other, explain:";
+               document.getElementById('loct').innerHTML = "Where exactly did you enter the US?";
+               document.getElementById('WaBt').innerHTML = "If bridge/port of entry (POE): Before crossing the bridge/POE, were you made to wait or turned away?";
+               document.getElementById('ist').innerHTML = "If so, for how long?";
+               document.getElementById("cilt").innerHTML = "Do you have family in the United States, and if so, who and what type of legal status do they have? If children, are they biological? If spouse, are you legally married?"
+               document.getElementById('Famt').innerHTML = "Do any of your family members in the US have any health or mental health challenges?";
+               document.getElementById('itt').innerHTML = "In total, how many people do you have here in the United States, including family and friends, that are willing to support you in your case";
+               document.getElementById('Point_of_contact').innerHTML = "Who is the best Contact for your case?";
+        ;
       }
     };
      </script>
@@ -107,78 +111,75 @@
 
   <main>
 
-    <div class="container">
+    <div id="RedBull" class="container">
       <form action="../improfile/improfile.html">
-        Give a unique, 4-digit Username ID (WRITE DOWN AND MAKE SURE TO REMEMBER):<br>
-        <input type="number" name="fourNum" id="fourN" placeholder="1234" value="" min="0" max="9999" required><br>
-        First name:<br>
+      <p id = "IDT">Give a unique, 4-digit Username ID (WRITE DOWN AND MAKE SURE TO REMEMBER):</p>
+        <input type="number" name="id" id="ld" placeholder="1234" value="" min="0" max="9999" required>
+        <p id = "fnt">First name:</p>
+
         <input type="text" name="firstname" id="fn" placeholder="John" value="" required><br>
-        Last name:<br>
+        <p id = "lnt">Last name:</p>
         <input type="text" name="lastname" id="ln" placeholder="Doe" value="" required><br>
-        Date of Birth:<br>
+       <p id = dobt>Date of Birth:</p>
         <input type="date" name="DOB" id="dob" placeholder="5/5/55" value="" required><br>
-        A#:<br>
+        <p id = "ant">  A#:</p>
         <input type="number" name="aNum" id="an" placeholder="01234567" min="0" max="99999999" value="" required><br>
-        Country of Origin:<br>
+        <p id = "coot">Country of Origin:</p>
         <input type="text" name="country" id="coo" placeholder="Ruritania" value="" required><br>
-        What is your primary language?:<br>
+        <p id="plt">What is your primary language?:</p>
         <input type="text" name="pLang" id="pl" placeholder="English" value="" required><br>
-        Do you speak any other languages?<br>
+       <p id = "olt">Do you speak any other languages?</p>
         <input type="radio" name="sLangBool" id="sltf" value="Yes" checked required> Yes<br>
         <input type="radio" name="sLangBool" id="sltf" value="No" required> No<br><br>
-        If so, which language(s)?<br>
+       <p id = "slt">If so, which language(s)?</p>
         <input type="text" name="sLang" id="sl" placeholder="Chinese, Spanish, etc." value="" required><br>
-        In what language would you like to be interviewed?<br>
+        <p id = ilangt>In what language would you like to be interviewed?</p><br>
         <input type="text" name="iLang" id="il" placeholder="English" value="" required><br>
-        In which languages can you read?<br>
+        <p id="rlangt">In which languages can you read?</p>
         <input type="text" name="rLang" id="rl" placeholder="English, Chinese, etc." value="" required><br>
-        Have you ever spoken with or had an attorney represent you before the immigration court?<br>
+       <p id = "art">Have you ever spoken with or had an attorney represent you before the immigration court?</p>
         <input type="radio" name="aRep" id="ar" value="Yes" checked required> Yes<br>
         <input type="radio" name="aRep" id="ar" value="No" required> No<br><br>
-        When did you last enter the US?<br>
+       <p id="ett">  When did you last enter the US?</p>
         <input type="date" id="et" name="entryTime" required>
-        Manner of last entry to the US:<br>
+       <p id="lewt">  Manner of last entry to the US:</p>
         <input type="radio" name="lEntryWay" id="lew" value="AA" checked required> AA<br>
         <input type="radio" name="lEntryWay" id="lew" value="EWI" required> EWI<br>
         <input type="radio" name="lEntryWay" id="lew" value="VISA" required> VISA<br>
         <input type="radio" name="lEntryWay" id="lew" value="Greencard" required> Greencard<br>
         <input type="radio" name="lEntryWay" id="lew" value="Other" required> Other<br><br>
-        If "Other", explain:
+       <p id = "ott">If "Other", explain:</p>
         <input type="text" name="lEntryPlace" id="lewd" placeholder="Details..." value="" required><br>
-        Where exactly did you enter the US?<br>
+      <p id ="loct">Where exactly did you enter the US?</p>
         <input type="radio" name="loc" id="loc" value="Bridge" checked required>Bridge<br>
         <input type="radio" name="loc" id="loc" value="River" required> River<br>
         <input type="radio" name="loc" id="loc" value="Desert" required> Desert<br>
         <input type="radio" name="loc" id="loc" value="Other" required> Other<br><br>
-        If "Other", explain:
+      <p id = "ott">If "Other", explain:</p>
         <input type="text"  name="locd" placeholder="Details..." value="" required><br>
-        If bridge/port of entry (POE): Before crossing the bridge/POE, were you made to wait or turned away?<br>
+      <p id = "WaBt">If bridge/port of entry (POE): Before crossing the bridge/POE, were you made to wait or turned away?</p>
         <input type="radio" name="Waited_at_Border" value="yes" checked> Yes<br>
         <input type="radio" name="Waited_at_Border" value="no"> No<br><br>
-        If so, for how long?
+     <p id = "ist"> If so, for how long?</p>
         <input type="text" id="Wait_time" name="Wait_time"><br><br>
-        Do you have family in the United States, and if so, who and what type of legal status do they have?
-        If children, are they biological? If spouse, are you legally married?<br><br>
+        <p id= "cilt">Do you have family in the United States, and if so, who and what type of legal status do they have?
+   If children, are they biological? If spouse, are you legally married?</p>
         <input type="text" id="Family" name="Family"><br><br>
-        Do any of your family members in the US have any health or mental health challenges?<br>
+        <p id= "Famt"> Do any of your family members in the US have any health or mental health challenges?</p>
         <input type="radio" name="Family_sick" value="" checked> Yes<br>
         <input type="radio" name="Family_sick" value="no"> No<br>
-        <br>In total, how many people do you have here in the United States, including family and friends, that are willing to support you in your case?<br>
+     <p id ="itt">In total, how many people do you have here in the United States, including family and friends, that are willing to support you in your case?</p>
         <input type="number" id="People_support" name="People_support">
-        <li>
-          <label for="Point_of_contact">Who is the best point of contact for your case?</label>
+          <p id="Point_of_contact">Who is the best point of contact for your case?</p>
           <input type="text" id="Point_of_contact" name="Point_of_contact">
-        </li>
-        <li>
-          <label for="Point_of_contact2">How do we contact this person?</label>
+          <p id="Point_of_contact2">How do we contact this person?</p>
           <input type="text" id="Point_of_contact2" name="Point_of_contact2">
-        </li>
       </form>
     </div>
 	<div class="container">
 	        <button type="button" class="btn btn-primary" onclick = "register()"> Register</button>
 	</div>
-	
+
 	<a id="finish" style="visibility:hidden"  href="../improfile/improfile.html">hidden</a>
 	
 		  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->

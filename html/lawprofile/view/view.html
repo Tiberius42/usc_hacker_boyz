@@ -17,6 +17,7 @@
     $(document).ready(function () {
         $('.dropdown-toggle').dropdown();
     });
+
   </script>
   </head>
 
@@ -66,7 +67,7 @@
     </div>
 	<div class = "container">
 		<div class= "row" id="cards">
-
+				
 		</div>
 	</div>
 
@@ -97,42 +98,34 @@
 		var db = firebase.firestore();
 
 	function fillCards(){
+		alert("fillCards runs");
 		firebase.auth().onAuthStateChanged(function(user) {
           if (user) {
-          var temp = db.collection('Case').where('LawyerID', '==', user.uid);
+                    var user = firebase.auth().currentUser;
 
-          //alert(temp.data().LawyerID);
+						  var temp = db.collection('Case').where('LawyerID', '==', user.uid);
 
-          temp.get().then(function (querySnapshot) {
-            querySnapshot.forEach(function (doc) {
-						alert("we are in");
+						  temp.get().then(function (querySnapshot) {
+							querySnapshot.forEach(function (doc) {
+							alert("Cases found");
+							  temp_id = doc.data().ImmigrantID;
+				
+								var temp = db.collection('Immigrant').where('id', '==', temp_id);
 
-              temp_id = doc.data().ImmigrantID;
-              alert(temp_id);
-              var imRef = db.collection('Immigrant').where('id', '==', temp_id);
-				imRef.get().then(function (querySnapshot2){
-					quertySnapshot2.forEach(function (doc) {
-							  
-						  db.collection("Immigrants").doc(temp_id);
-
-								imRef.get().then(function(doc) {
-									if (doc.exists) {
-									alert("have immigrant data");
-										console.log("Document data:", doc.data());
-									} else {
-										// doc.data() will be undefined in this case
-										console.log("No such document!");
-									}
-								}).catch(function(error) {
-									console.log("Error getting document:", error);
+				
+							  temp.get().then(function (querySnapshot2) {
+									querySnapshot2.forEach(function (doc) {
+									alert(doc.data().firstName);
+									var fn = doc.data().firstName;
+									var ln = doc.data().lastName;
+									document.getElementById('cards').innerHTML += "<div class='card mx-4 p-2'> <h5 class='card-title'> " + ln + ", " + fn + "</h5><p class='card-text'>Sample text for cases</p><a href='#' class='card-link'>Link to Case</a></div>"; 
+									  
 								});
-					});
-				});
-			  
-		
-            });
-          });
-		  }
+							  });
+							  
+						});
+		     		  });
+				}
 		  })
 		}
 	</script>
