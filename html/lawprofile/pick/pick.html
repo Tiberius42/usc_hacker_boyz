@@ -83,11 +83,47 @@
           //var flagged1 = db.ref().child("Immigrant").
 
         function addClient(ID){
+          //alert(ID);
+
+          
           var user = firebase.auth().currentUser;
 
           var temp = db.collection('Case').where('ImmigrantID', '==', ID);
 
-          temp.LawyerID = user.uid;
+          //alert(temp.data().LawyerID);
+
+          var temp_id = "";
+          temp.get().then(function (querySnapshot) {
+            querySnapshot.forEach(function (doc) {
+              //alert("hello there");
+              //doc.data().LawyerID = "" + user.uid;
+              /*doc.set({
+                LawyerID: "" + user.uid
+              })*/
+              temp_id = doc.id;
+              
+              var washingtonRef = db.collection("Case").doc(temp_id);
+
+              // Set the "capital" field of the city 'DC'
+              return washingtonRef.update({
+                  LawyerID: "" + user.uid
+              })
+              .then(function() {
+                  console.log("Document successfully updated!");
+              })
+              .catch(function(error) {
+                  // The document probably doesn't exist.
+                  console.error("Error updating document: ", error);
+              });
+            });
+          });
+
+          //alert(temp_id);
+
+          
+          //db.collection('Case').where('ImmigrantID', '==', ID).doc("LawyerID") = user.uid;
+
+          //temp.ref("LawyerID") = user.uid;
         }
 
         function listAll(){
@@ -119,7 +155,7 @@
                 var formattedTime = (date.getMonth() > 8) ? (date.getMonth() + 1) : ('0' + (date.getMonth() + 1)) + '/' + ((date.getDate() > 9) ? date.getDate() : ('0' + date.getDate())) + '/' + date.getFullYear();
 
 
-                temp2 = "<a href='#' class='list-group-item list-group-item-action' onClick='addClient(ID)'>" + "Username: " + ID + " | " + fn + " " + ln + " | DOB: " + formattedTime + "</a>";
+                temp2 = "<a href='#' class='list-group-item list-group-item-action' onclick='addClient(\"" + ID + "\")'>" + "Username: " + ID + " | " + fn + " " + ln + " | DOB: " + formattedTime + "</a>";
                 total = total + temp2;
                 alert(temp2);
                 //alert(doc.data().id);
