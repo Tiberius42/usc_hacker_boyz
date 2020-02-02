@@ -20,3 +20,6 @@ The website is a service that allows at-risk individuals to more easily connect 
 In the event of an undocumented immigrant's detention, the immigrant will be able to log onto their account and flag themselves as detained. If the detainee is unable to access their account during their imprisonment, those relatives and friends they have shared account access with will be able to flag them as detained as well.
 
 Once flagged, the detained immigrant's account will become visible to lawyers on the website. Because the detainee will have entered their personal information and contacts into the website beforehand, lawyers will be able to more easily start building cases for and/or representing the detainee. In this system, even if detainees are unable to effectively comunicate with the outside world, lawyers will still be made aware of the detention and will have more information to combat it.
+
+
+Made with Firebase.
