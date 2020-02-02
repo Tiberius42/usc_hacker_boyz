@@ -53,7 +53,7 @@
      </div>
 	 
 	 	<a id="jump" type="button" style="visibility:hidden" href="../lawprofile/lawprofile.html">Jump</a>
-	 	<a id="jump2" type="button" style="visibility:hidden" href="../improfile/im_landing.html">Jump2</a>
+	 	<a id="jump2" type="button" style="visibility:hidden" href="../improfile/improfile.html">Jump2</a>
 
 
      <script>
@@ -107,14 +107,14 @@
 					alert("user needs to register");
 						db.collection("Immigrant").where("id", "==", uid)
 						.get()
-						.then(function(querySnapshot) {
+						.then(function(querySnapshot2) {
 						
-						if(querySnapshot.empty){
+						if(querySnapshot2.empty){
 							//USER NEEDS TO REGISTER
 							alert("user needs to register");
 						}
 						else{
-							querySnapshot.forEach(function(doc) {
+							querySnapshot2.forEach(function(doc) {
 								// doc.data() is never undefined for query doc snapshots
 								//console.log(doc.id, " => ", doc.data());
 								//JUMP TO LANDING
