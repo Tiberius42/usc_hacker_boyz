@@ -15,7 +15,7 @@
 
   </head>
 
-  <body>
+  <body onload="help()">
 
     <div class="container">
       <h2> HackSC - Equity</h2>
@@ -50,6 +50,71 @@
 
   <main>
 
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <!-- <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-firestore.js"></script>
+  <script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAvEkZc5g6B0yKAdwyavrgOftAHH2ZbToc",
+    authDomain: "hacksc2020-3a9d3.firebaseapp.com",
+    //databaseURL: "https://hacksc2020-3a9d3.firebaseio.com",
+    projectId: "hacksc2020-3a9d3",
+    /*storageBucket: "hacksc2020-3a9d3.appspot.com",
+    messagingSenderId: "448755823877",
+    appId: "1:448755823877:web:c46d94bc3f970f226bf36c",
+    measurementId: "G-3G42FB3502"*/
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  <!-- firebase.analytics();
+  var db = firebase.firestore();
+
+  function getData(){
+    Firebase.firestore().collection("Orders/orderid123/Products").get()
+  }
+  function help() {
+    var user = firebase.auth().currentUser;
+    var userDataRef = firebase.database().ref("Lawyer").orderByKey();
+    userDataRef.once("id", "==", "user").then(function(snapshot) {
+      snapshot.forEach(function(childSnapshot) {
+        var key = childSnapshot.key;
+        var childData = childSnapshot.val();
+
+        var fName = childSnapshot.val().FirstName;
+        var lName = childSnapshot.val().LastName;
+
+        $("#fname").append(fName);
+        $("#lname").append(lName);
+
+    });
+  });
+}
+  function registerCase(){
+      var user = firebase.auth().currentUser;
+      var immigID = "garbage_garbage_garbage";
+      var lawyerID = "Unassigned";
+          db.collection("Case").add({
+          ImmigrantID: immigID,
+          LawyerID: lawyerID,
+        })
+        .then(function(docRef) {
+          console.log("Document written with ID: ", docRef.id);
+        })
+        .catch(function(error) {
+          console.error("Error adding document: ", error);
+    });
+
+
+}
+  </script>
+
     <!-- <button style="height:50px;width:70px" type="button" class="btn">Update Contact Information</button> -->
 
      <!--<font size="5" color="green"><b>you are learning web designing</b></font> <p>-->
@@ -63,7 +128,11 @@
 
        First Name: <div> </div><p id =LN >
 
+
        Last Name: <div> </div><p id="DOB">
+
+       Last Name: <div>  </div><p>
+
 
        Date of Birth: <div> </div><p id = "COO">
 
@@ -83,6 +152,7 @@
     </div>
   </div>
 </div>
+
 
     <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>

@@ -79,6 +79,7 @@
 				  db.collection("Lawyer").add({
 					firstName: fn,
 					lastName: ln,
+          cellPhone: c,
 					id : user.uid
 				})
 				.then(function(docRef) {
