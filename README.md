@@ -21,5 +21,5 @@ In the event of an undocumented immigrant's detention, the immigrant will be abl
 
 Once flagged, the detained immigrant's account will become visible to lawyers on the website. Because the detainee will have entered their personal information and contacts into the website beforehand, lawyers will be able to more easily start building cases for and/or representing the detainee. In this system, even if detainees are unable to effectively comunicate with the outside world, lawyers will still be made aware of the detention and will have more information to combat it.
 
-
+<br/>
 Made with Firebase.
